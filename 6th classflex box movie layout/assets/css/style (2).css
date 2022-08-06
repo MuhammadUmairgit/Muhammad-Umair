@@ -1,0 +1,154 @@
+*{
+	margin: 0px auto;
+	font-family: sans-serif;
+	background-color: hsl(0deg 0% 0%);
+}
+#main{
+	display: flex;
+	justify-content: space-between;
+}
+
+#sub-header h1{
+	color: white;
+	text-align: center;
+	font-size: 50px;
+    font-weight: 100;
+    padding-top: 100px;
+}
+.container{
+	width: 90%;
+}
+.container-3{
+	width: 33%;
+	margin-right: 0px;
+	background-color: hsl(0deg 0% 93%);
+}
+.container-2{
+	width: 73%;
+	margin-left: 0px;
+}
+#sub-header p{
+	text-align: center;
+	color: hsl(48deg 100% 46%);
+	padding-bottom: 70px;
+}
+nav ul{
+	display: flex;
+	list-style-type: none;
+}
+.nav-items:hover{
+	background-color: black;
+	color: yellow;
+	transition-duration: 2s;
+	cursor: pointer;
+}
+nav ul li{
+	background-color: hsl(49deg 100% 50%);
+	width: 38%;
+	font-weight: 700;
+	padding: 10px 0px;
+	text-align: center;
+    margin-left: -40px;
+}
+#main-jack-sparrow{
+	display: flex;
+	justify-content: space-between;
+}
+.jack-sparrow img{
+	width: 94%;
+	margin-top: 30px;
+    margin-left: 25px;
+}
+.jack-sparrow{
+	background-color: hsl(0deg 0% 93%);
+}
+.jack-sparrow h2{
+	background-color: hsl(49deg 100% 50%);
+    margin-left: 24px;
+    margin-top: -4px;
+    width: 435px;
+    font-weight: 700;
+    text-align: center;
+    padding: 13px 0px;
+}
+.jack-sparrow h2:hover{
+	background-color: black;
+	transition-duration: 2s;
+	cursor: pointer;
+	color: yellow;
+}
+.jack-sparrow p{
+	background-color: white;
+	padding-top: 5px;
+}
+.paragraph{
+    background-color: white;
+    margin-left: 24px;
+    width: 386px;
+    padding: 25px 15px 15px 34px;
+}
+#main-aside{
+	background-color: hsl(0deg 0% 93%);
+}
+.aside-1{
+	background-color: hsl(0deg 0% 93%);
+}
+.aside-1 h2{
+	background-color: white;
+	padding: 30px 0px 0px 30px;
+	font-weight: 700;
+	margin-top: 30px;
+    font-size: 20px;
+    margin-left: 50px;
+    padding-bottom: 10px;
+    width: 217px;
+}
+.aside-1 p{
+	background-color: white;
+	margin-left: 50px;
+	padding: 8px 0px 0px 47px;
+	width: 200px;
+	margin-right: 31px;
+}
+.aside-1 :nth-child(6){
+ 	padding-bottom: 30px;
+}
+#for-3 :nth-child(3){
+	padding-bottom: 30px;
+}
+#for-4 :nth-child(4){
+	padding-bottom: 30px;
+}
+.sherlock-holmes img{
+	width: 95%;
+	margin-left: 25px;
+	margin-top: 15px;
+}
+#main-sherlock-holmes{
+	display: flex;
+	justify-content: space-between;
+}
+.sherlock-holmes{
+	background-color: hsl(0deg 0% 90%);
+}
+#disp{
+	display: flex;
+	justify-content: space-between;
+}
+#main-joker{
+	background-color: hsl(0deg 0% 93%);
+}
+.sherlock-holmes p{
+	background-color: white;
+    width: 82%;
+    margin-left: 24px;
+    padding: 25px 0px 15px 30px;
+}
+.sherlock-holmes h2{
+    background-color: hsl(49deg 100% 50%);
+    width: 92%;
+    margin-top: -4px;
+    margin-left: 25px;
+    text-align: center;
+    padding: 10px 0px 10px 0px;
+}

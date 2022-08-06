@@ -1,0 +1,216 @@
+* {
+    margin: 0px;
+    font-family: sans-serif;
+}
+.container {
+    width: 85%;
+    margin: 0px auto;
+}
+#banner-container {
+    width: 100%;
+}
+header {
+    background-color: hsl(0deg 0% 91%);
+}
+#header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.563rem 0.625rem 1.563rem 0.625rem;
+}
+#header nav ul li {
+    list-style-type: none;
+    margin-right: 0.5rem;
+    font-weight: 43.75rem;
+    padding-top: 0.625rem;
+}
+#header nav ul li a{
+	text-decoration: none;
+}
+#header nav ul li a:hover{
+	color: #1abb9c;
+}
+nav ul {
+    display: flex;
+}
+#image {
+    height: 300px;
+    margin-bottom: 21.875rem;
+}
+#main-image {
+    display: flex;
+    justify-content: space-between;
+    margin-top: -5.75rem;
+}
+.main-div-image img {
+    margin-left: 4.688rem;
+}
+.common-paragraph {
+    text-align: center;
+    color: hsl(0deg 0% 71%);
+}
+.common-heading {
+    color: hsl(0deg 0% 42%);
+    text-align: center;
+    margin: 0.625rem 0px;
+}
+#our-last-work div hr {
+    margin: 2.813rem 0px;
+    color: hsl(0deg 0% 91%);
+}
+#our-last-work div h2 {
+    color: hsl(0deg 0% 42%);
+}
+.common-h {
+    color: hsl(240deg 3% 32%);
+}
+.common-h1 {
+    color: hsl(0deg 0% 82%);
+}
+#main {
+    display: flex;
+    justify-content: space-between;
+}
+.common-paragraph-1 {
+    color: hsl(0deg 0% 42%);
+}
+.main-heading {
+    margin-right: 2.5rem;
+    margin-bottom: 2.813rem;
+}
+#main-quote {
+    background-color: hsl(0deg 0% 94%);
+    padding: 2.5rem 0px;
+}
+#image-1 {
+    text-align: center;
+    margin-bottom: 0.938rem;
+}
+#main-footer {
+    background-color: hsl(0deg 0% 12%);
+}
+.common-footer-heading {
+    color: hsl(0deg 0% 42%);
+}
+.common-footer-paragraph {
+    color: hsl(0deg 0% 71%);
+}
+#main-footer-display {
+    display: flex;
+    justify-content: space-between;
+}
+.common-footer img {
+    display: flex;
+    justify-content: space-between;
+    margin-left: -1.25rem;
+    margin-bottom: -0.938rem;
+}
+.common-footer-paragraph {
+    padding-bottom: 1.875rem;
+}
+.common-footer-heading {
+    padding: 1.875rem 0px;
+}
+#line {
+    background-color: hsl(0deg 0% 21%);
+    margin-bottom: 1.875rem;
+}
+#footer {
+    background-color: hsl(0deg 0% 12%);
+    padding-bottom: 3.125rem;
+}
+@media(max-width: 1030px){
+	#main-image {
+		flex-direction: column;
+		text-align: center;
+	}
+	#header{
+		flex-direction: column;
+		text-align: center;
+	}
+	nav ul{
+		flex-direction: column;
+		text-align: center;
+	}
+	.main-div-image img {
+		margin-left: 0px;
+		margin-top: 5.625rem;
+	}
+	#main{
+		flex-direction: column;
+		text-align: center;
+	}
+	#our-last-work div h2 {
+		text-align: center;
+		margin-bottom: 1.25rem;
+	}
+	#image {
+		margin-bottom: 5.625rem;
+	}
+	.main-heading {
+		margin-right: 0px;
+	}
+	.common-h {
+		margin-bottom: 0.625rem;
+	}
+	.common-h1 {
+		margin-bottom: 0.625rem;
+	}
+	#main-footer-display{
+		flex-direction: column;
+		text-align: center;
+	}
+	.common-footer img {
+		margin-left: 5rem;
+	}
+	.common-footer-paragraph{
+		text-align: center;
+	}
+	#logo{
+		text-align: center;
+	}
+	#header nav ul li{
+		margin-right: 0px;
+	}
+	#logo{
+		margin-left: 2rem;
+	}
+}
+@media(max-width: 580px){
+	#header {
+		flex-direction: column;
+		text-align: center;
+	}
+	nav ul{
+		flex-direction: column;
+		text-align: center;
+	}
+	#image {
+		margin-bottom: 0px;
+	}
+	#main-footer-display{
+		flex-direction: column;
+		text-align: center;
+	}
+	.common-footer img {
+		margin-left: 5rem;
+	}
+	.common-footer-paragraph{
+		text-align: center;
+	}
+	#header nav ul li{
+		margin-right: 0px;
+	}
+	#logo{
+		margin-left: 2rem;
+	}
+	.main-div-image img {
+    	margin-left: 0px;
+    	margin-top: 0px;
+}
+	#banner-container{
+		height: 160px;
+	}
+	.main-icons{
+		margin-bottom: 1.875rem;
+	}
+}
