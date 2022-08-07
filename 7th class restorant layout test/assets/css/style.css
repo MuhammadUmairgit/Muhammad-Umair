@@ -5,13 +5,10 @@
 	width: 75%;
 	margin: 0px auto;
 }
-body{
-	margin-bottom: 200px;
-}
 header{
 	display: flex;
 	justify-content: space-between;
-	padding: 20px 0px;
+	padding: 20px 115px;
 }
 header nav ul{
 	display: flex;
@@ -30,21 +27,70 @@ header nav ul li{
 	margin-top: -4px;
 }
 #for-image img{
-	margin-left: 50%;
+	    margin-left: 695px;
 }
 #for-rupees{
 	display: flex;
 	justify-content: space-between;
+	    padding: 0px 50px;
+}
+.main-for-rupees{
+	width: 44%;
+	margin-left: 90px;
+	margin-top: 15px;
 }
 .for-menu{
 	display: flex;
 	justify-content: space-between;
+	margin-top: 30px;
 }
-.for-menu{
-	width: 45%;
+.for-menu h2{
+	width: 110%;
+	color: hsl(240deg 4% 52%);
 }
 .for-menu hr{
-	width: 40%;
-	margin-top: 12px;
-	height: 0px;
+    width: 10%;
+    margin-top: 12px;
+    height: 0px;
+    padding: 0px 91px;
+    margin-left: -90px;
+}
+.for-menu p{
+	color: hsl(9deg 4% 66%);
+}
+.for-p p{
+	margin-left: -100px;
+}
+#for-images{
+	padding: 0px 150px;
+}
+.four-images{
+	display: flex;
+	justify-content: space-between;
+	width: 91%;
+	margin-top: 10px;
+}
+#main-four-images{
+	display: flex;
+}
+.four-images{
+	color: hsl(9deg 4% 66%)
+}
+#main-four-images img{
+	margin-top: 100px;
+	width: 92%;
+	margin-right: 80px;
+}
+footer{
+	background-color: hsl(0deg 0% 23%);
+}
+#main-footer-paragraph{
+	display: flex;
+	justify-content: space-between;
+	margin-top: 90px;
+	padding: 50px 250px 50px 150px;
+}
+#main-footer-paragraph p{
+ 	color: white;
+ 	padding-top: 10px;
 }
