@@ -13,6 +13,9 @@ header{
 header nav ul{
 	display: flex;
 }
+nav ul li:hover{
+	color: red;
+}
 header nav ul li{
     list-style-type: none;
     margin-left: 20px;
@@ -24,7 +27,7 @@ header nav ul li{
 	background-color: hsl(360deg 100% 61%);
 	border: none;
 	width: 100%;
-	margin-top: -4px;
+	margin-top: -5px;
 }
 #for-image img{
 	    margin-left: 695px;
@@ -84,6 +87,9 @@ header nav ul li{
 footer{
 	background-color: hsl(0deg 0% 23%);
 }
+#main-footer-paragraph p:hover{
+	color: blue;
+}
 #main-footer-paragraph{
 	display: flex;
 	justify-content: space-between;
@@ -93,4 +99,91 @@ footer{
 #main-footer-paragraph p{
  	color: white;
  	padding-top: 10px;
+}
+@media(max-width: 1200px){
+	#for-rupees{
+		flex-direction: column;
+	}
+	.main-for-rupees{
+		    width: 100%;
+    text-align: center;
+	}
+	#banner-image img{
+		width: 100%;
+	}
+	.for-menu{
+		width: 85%;
+	}
+	.for-menu hr{
+		width: 35%;
+	}
+	.for-p p{
+		margin-left: -180px;
+	}
+	#for-image img{
+		margin-left: 565px;
+	}
+}
+@media(max-width: 980px){
+	.for-menu hr{
+		width: 15%;
+	}
+	#main-four-images{
+		flex-direction: column;
+	}
+	#main-four-images img{
+		width: 35%;
+	}
+	.sub-main-four-images{
+		width: 100%;
+		text-align: center;
+	}
+	.four-images{
+		width: 35%;
+		margin-left: 175px;
+	}
+	#for-image img{
+		margin-left: 475px;
+	}
+	#main-footer-paragraph{
+		flex-direction: column;
+    	text-align: center;
+	}
+	#main-footer-paragraph p{
+		padding-bottom: 15px;
+	}
+	.footer-paragraph img{
+		padding: 10px 0px;
+	}
+	.sub-main-four-images{
+		margin-top: -55px;
+	}
+}
+@media(max-width: 780px){
+	header{
+		flex-direction: column;
+	}
+	#header{
+		width: 111%;
+		margin: 10px 0px;
+		text-align: center;
+	}
+	header nav ul li{
+		    margin: 5px 0px;
+	}
+	header nav ul{
+		text-align: center;
+	}
+	header nav ul{
+		flex-direction: column;
+	}
+	#for-image img{
+		margin-left: 340px;
+	}
+	.for-menu hr{
+		width: 0%;
+	}
+	.four-images{
+		margin-left: 108px;
+	}
 }
