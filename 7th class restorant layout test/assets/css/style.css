@@ -52,17 +52,17 @@ header nav ul li{
 	color: hsl(240deg 4% 52%);
 }
 .for-menu hr{
-    width: 10%;
+    width: 9%;
     margin-top: 12px;
     height: 0px;
     padding: 0px 91px;
-    margin-left: -90px;
+    margin-left: -33px;
 }
 .for-menu p{
 	color: hsl(9deg 4% 66%);
 }
 .for-p p{
-	margin-left: -100px;
+	margin-left: -35px;
 }
 #for-images{
 	padding: 0px 150px;
@@ -71,13 +71,12 @@ header nav ul li{
 	display: flex;
 	justify-content: space-between;
 	width: 91%;
+	text-align: center;
 	margin-top: 10px;
+	color: hsl(9deg 4% 66%)
 }
 #main-four-images{
 	display: flex;
-}
-.four-images{
-	color: hsl(9deg 4% 66%)
 }
 #main-four-images img{
 	margin-top: 100px;
