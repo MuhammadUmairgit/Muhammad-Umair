@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Introduction</title>
+    <!-- <style>
+        h1{
+            color: red;
+        }
+    </style> -->
+</head>
+
+<body>
+    <h1>Heading One</h1>
+
+    <script>
+        // alert('working');
+        // DOM stands for document object model
+        // go to console and type document
+        //document.querySelector('h1').innerText= "Muzammil Rafay"
+
+        //you can store information in variables
+
+        // DATAYPES
+        // there are two data types
+        // 1-primitive type
+        // 2-reference type / object type
+
+
+
+        //REFERENCE TYPE
+        // Accessed by reference Objects that are stored 
+        // on the heap a pointer to a location in memory.
+
+        var store = ['one', 'two', "three", 121, 121.124, null]; //array
+        var store = { a: 1, b: 2, c: 3 }; //object literal / object
+
+        // console.log(store, " ...");
+        // console.log(typeof store, " ...");
+
+        //Primitive Type Variables
+        //store directly in the location the variable accesses stored on the stack.
+
+        var store = 'something'; //string
+        var store = "something"; //string
+        var store = 12345; // Number
+        var store = true; // Boolean // 0 = false, 1 = true
+        var store = false; // boolean
+        var store = null; // null (khali hai)
+        var store = undefined; // undefined
+        var store = Symbol("values of symbol"); //symbol
+
+        console.log(store, " ...");
+        console.log(typeof store, " ...");
+
+
+        let muzammil_marks = 100;
+        let musaddiq_marks = muzammil_marks;
+
+        musaddiq_marks = 90;
+        console.log(musaddiq_marks) //90
+        console.log(muzammil_marks); //100
+
+
+
+
+        // OBJECT
+        let info = {
+            name: 'Muzammil Rafay',
+            designation: 'Senoir Software Engineer'
+        };
+
+        let info2 = info; //create reference for info variable not a new variable
+        // info2 = {...info}; //spread operator 
+        info2.name = "Musaddiq";
+
+        console.log(info.name); //Musaddiq
+        console.log(info2.name); //Musaddiq
+
+
+        //Arr
+
+        let arr1 = ['one', 'two'];
+        let arr2 = arr1;
+        // arr2 = [...arr1]; //spread operator
+        arr2.push('third');
+
+        console.log(arr1); // ['one', 'two', 'third']
+        console.log(arr2); // ['one', 'two', 'third']
+
+
+        //There are three types of variables
+        // 1-let
+        // 2-const
+        // 3-var
+
+        // {} = scope
+
+        // function name(){
+        // }
+
+        //let is working only inside of the scope
+        {
+            let qavi_var = 'qavi';
+            console.log(qavi_var); //qavi;
+        }
+        console.log(qavi_var); //undefined;
+
+        //you cannot change the constant variable value and working only inside of the scope
+        const coachingName = 'Squad Coders Dev';
+        coachingName = 'Dev'; //error
+
+
+        //you can access var variable from everywhere like inside of the scope and outside of the scope.
+        {
+            var headphonename = 'sony';
+        }
+        console.log(headphonename) //sony;
+
+        //2nd example
+        {
+            var headphonename = 'sony';
+            console.log(headphonename) //sony;
+        }
+
+
+    </script>
+</body>
+
+</html>

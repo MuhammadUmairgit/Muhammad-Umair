@@ -1,0 +1,17 @@
+Download and install Vs Code From Google
+
+Install Two Packages in Vs Code
+1-Live Server
+2-JavaScript (ES6) code snippets
+
+
+Javascript
+
+javascript is a programming language
+client-side (browser) language
+you can create mobile application cross platform (React Native)
+you can also create desktop application cross platform (Electron JS)
+
+
+
+https://www.tutorialspoint.com/advantages-and-disadvantages-of-javascript

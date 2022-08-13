@@ -96,6 +96,7 @@ footer{
 }
 #main-footer-paragraph p:hover{
 	color: blue;
+	
 }
 #main-footer-paragraph{
 	display: flex;
