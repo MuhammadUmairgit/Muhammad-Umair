@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>java script form</title>
+    <style>
+        *{
+            font-family: sans-serif;
+        }
+        body{
+            margin-bottom: 200px;
+        }
+        #form{
+            margin-left: 500px;
+        }
+        h2{
+            margin-top: -10px;
+            margin-left: 565px;
+            font-size: 27px;
+            font-weight: 100;
+        }
+        #ln{
+            margin-top: 20px;
+            margin-left: 4px;
+        }
+        #email{
+            margin-top: 20px;
+            margin-left: 29px;
+        }
+        #forget{
+            margin-top: 10px;
+            border: none;
+            margin-left: -30px;
+            font-size: 15px;
+            color: hsl(209deg 100% 46%);
+            background-color: white;
+        }
+        #logo{
+            margin-top: 100px;
+            margin-left: 560px;
+            width: 8%;
+        }
+        #head{
+
+            margin-left: 500px;
+            width: 30px;
+        }
+        #intro{
+            margin-left: 500px ;
+        }
+        #para{
+            margin: 20px 0px 20px 470px;
+        }
+        #for-password{
+            padding: 15px 8px;
+            width: 270px;
+            margin-left: -30px;
+        }
+        #main-check{
+            display: flex;
+            justify-content: space-between;
+            width: 14%;
+        }
+        #checkbox{
+            margin-left: -28px;
+        }
+        #button{
+            color: white;
+            background-color: hsl(209deg 100% 46%);
+            border: none;
+            padding: 10px 30px;
+            border-radius: 5px;
+        }
+        #footer{
+            display: flex;
+            justify-content: space-between;
+            width: 30%;
+            margin-top: 30px;
+        }
+        hr{
+            margin-left: 350px;
+            width: 40%;
+            margin-top: 100px;
+            margin-bottom: -90px;
+            background-color: hsl(150deg 7% 88%);
+        }
+        #last{
+            padding: 2px 0px;
+            border: none;
+            width: 65%;
+            background-color: hsl(150deg 7% 88%);
+            margin-left: -145px;
+        }
+    </style>
+</head>
+<body>
+    <hr>
+    <img src="./Google-new-logo.webp" id="logo">
+    <h2>Hi Umair</h2>
+
+
+    <p id="para">To continue,first verify it's you</p>
+
+    <!-- <img src="./download.png" id="head"> -->
+    <form id="form">
+        <input type="password" name="password" id="for-password"><br>
+        <div id="main-check">
+            <input type="checkbox" onclick="myFunction()" id="checkbox">
+            <p>show password</p>
+        </div>
+       <!-- first name: <input type="text" name="firstname" id="fn"><br>
+        last name: <input type="text" name="lastname" id="ln"><br>
+        email: <input type="text" name="lastname" id="email"><br>  -->
+        <div id="footer">
+            <p onclick="myfunction()" value="reset form" id="forget">Forget password?</p>
+            <button type="button" id="button">Next</button>
+        </div>
+        <hr id="last">
+
+    </form>
+    
+    <script>
+        function myfunction() {
+            document.getElementById("form").reset();
+        }
+        function myFunction() {
+            const x  = document.getElementById("for-password");
+            if (x.type === "password") {
+                x.type = "text";
+            }else {
+                x.type = "password";
+            }
+        }
+    </script>
+</body>
+</html>
