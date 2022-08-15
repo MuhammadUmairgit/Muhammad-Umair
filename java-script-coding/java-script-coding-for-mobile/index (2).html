@@ -67,7 +67,7 @@
         #checkbox{
             margin-left: -28px;
         }
-        #button{
+        .button{
             color: white;
             background-color: hsl(209deg 100% 46%);
             border: none;
@@ -116,7 +116,7 @@
         email: <input type="text" name="lastname" id="email"><br>  -->
         <div id="footer">
             <p onclick="myfunction()" value="reset form" id="forget">Forget password?</p>
-            <button type="button" id="button">Next</button>
+            <button class="button" type="button">next</button>
         </div>
         <hr id="last">
 
@@ -127,7 +127,7 @@
             document.getElementById("form").reset();
         }
         function myFunction() {
-            const x  = document.getElementById("for-password");
+            var x  = document.getElementById("for-password");
             if (x.type === "password") {
                 x.type = "text";
             }else {
