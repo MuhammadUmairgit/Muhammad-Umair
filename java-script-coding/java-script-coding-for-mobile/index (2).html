@@ -9,6 +9,8 @@
     <style>
         *{
             font-family: sans-serif;
+            margin-left: 0px;
+            padding: 0px;
         }
         body{
             margin-bottom: 200px;
@@ -37,6 +39,7 @@
             font-size: 15px;
             color: hsl(209deg 100% 46%);
             background-color: white;
+            width: 78%;
         }
         #logo{
             margin-top: 100px;
@@ -59,10 +62,17 @@
             width: 270px;
             margin-left: -30px;
         }
+        #for-password :hover{
+            border: red;
+        }
         #main-check{
             display: flex;
-            justify-content: space-between;
-            width: 14%;
+            /* justify-content: space-between; */
+            width: 100%;
+            margin-top: 10px;
+        }
+        #main-check p{
+            margin-left: 30px;
         }
         #checkbox{
             margin-left: -28px;
@@ -72,11 +82,13 @@
             background-color: hsl(209deg 100% 46%);
             border: none;
             padding: 10px 30px;
-            border-radius: 5px;
-        }
+            border-radius: 5px;   
+            margin-top: -5px;
+            height: 45px;
+}
         #footer{
             display: flex;
-            justify-content: space-between;
+            /* justify-content: space-between; */
             width: 30%;
             margin-top: 30px;
         }
@@ -87,17 +99,90 @@
             margin-bottom: -90px;
             background-color: hsl(150deg 7% 88%);
         }
-        #last{
+        /* #last{
             padding: 2px 0px;
             border: none;
             width: 65%;
             background-color: hsl(150deg 7% 88%);
             margin-left: -145px;
+        } */
+        @media(max-width: 650px) {
+            #logo{
+                margin-top: 100px;
+                margin-left: 140px;
+                width: 10%;
+            }
+            h2{
+                margin-top: -5px;
+                margin-left: 115px;
+            }
+            #para {
+                margin: 15px 0px 20px 66px;
+            }
+            #for-password {
+                padding: 15px 8px;
+                width: 270px;
+                margin-left: -470px;
+            }
+            #checkbox {
+                margin-left: -460px;
+            }
+            .last{
+                margin-left: 0px;
+                width: 53%;
+            }
+            #last{
+                margin-left: -500px;
+                width: 270%;
+            }
+            /* #show{
+                margin-top: 16px;
+                width: 100%;
+                color: red;
+                margin-left: 50px;
+                margin-right: 20px;
+            } */
+            #forget{
+                margin-top: -11px;
+                margin-left: -465px;
+            }
+            .button{
+                /* margin-right: 235px; */
+                margin-top: -15px;
+            }
+        }
+        @media (max-width:320px) {
+            #main-for-all{
+                width: 100%;
+            }
+            .last {
+                margin-left: 0px;
+                width: 100%;
+            }
+            .button{
+                margin-left: 45px;
+            }
+            #logo{
+                width: 30%;
+                margin-left: 110px;
+            }
+            h2{
+                width: 37%;
+                margin-left: 103px;
+            }   
+            #para{
+                margin: 15px 0px 20px 46px;
+                width: 75%;
+            }
+            #for-password{
+                width: 240px;
+            }
         }
     </style>
 </head>
 <body>
-    <hr>
+<div id="main-for-all">
+    <hr class="last">
     <img src="./Google-new-logo.webp" id="logo">
     <h2>Hi Umair</h2>
 
@@ -109,19 +194,17 @@
         <input type="password" name="password" id="for-password"><br>
         <div id="main-check">
             <input type="checkbox" onclick="myFunction()" id="checkbox">
-            <p>show password</p>
+            <p id="show">show password</p>
         </div>
        <!-- first name: <input type="text" name="firstname" id="fn"><br>
         last name: <input type="text" name="lastname" id="ln"><br>
         email: <input type="text" name="lastname" id="email"><br>  -->
         <div id="footer">
             <p onclick="myfunction()" value="reset form" id="forget">Forget password?</p>
-            <button class="button" type="button">next</button>
+            <button class="button" onclick="mfunction()" type="button">next</button>
         </div>
-        <hr id="last">
-
     </form>
-    
+</div>
     <script>
         function myfunction() {
             document.getElementById("form").reset();
@@ -133,6 +216,9 @@
             }else {
                 x.type = "password";
             }
+        }
+        function mfunction() {
+            alert("sign in finished");
         }
     </script>
 </body>
