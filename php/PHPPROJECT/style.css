@@ -1,0 +1,14 @@
+*{
+
+}
+input{
+    margin-bottom: 20px;
+    border-radius: 6px;
+}
+#button{
+    background-color: orange;
+    border: none;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 10px;
+}
