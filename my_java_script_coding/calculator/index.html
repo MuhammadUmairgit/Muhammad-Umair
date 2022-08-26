@@ -42,6 +42,26 @@
     background-color: gray;
     color: honeydew;
 }
+#btn:hover{
+    background-color: gray;
+    color: honeydew;
+}
+#btn{
+    height: 60px;
+    padding: 0px;
+    margin: 5px;
+    width: 93%;
+    margin-left: 10px;
+    float: left;
+    box-sizing: border-box;
+    background-color: rgb(12, 10, 15);
+    border: none;
+    font-size: 30px;
+    line-height: 30px;
+    font-weight: 700;
+    color: lightcoral;
+    cursor: pointer;
+}
 input[type=button]{
     width: 60px;
     height: 60px;
@@ -77,6 +97,27 @@ input[type=text]{
     background-color: tomato;
     color: white;
 }
+@media(max-width: 290px){
+    .display{
+        padding: 16px 0px 0px 0px;
+    }
+    input[type=button]{
+        height: 40px;
+        border-radius: 35%;
+    }
+}
+@media(max-width: 350px){
+    .display{
+        padding: 16px 0px 0px 0px;
+    }
+    input[type=button]{
+        height: 40px;
+        border-radius: 35%;
+    }
+    input[type=button]{
+        margin: 2px 4px 2px 5px;
+    }
+}
     </style>
 </head>
 <body>
@@ -105,11 +146,12 @@ input[type=text]{
                     <input class="btn" type="button" name="mul" value="*" onclick="myfunction(mul.value)">
                 </div>
                 <div class="row">
-                    <input class="btn" type="button" name="b0" value="0" onclick="myfunction(b7.value)">
+                    <input class="btn" type="button" name="b0" value="0" onclick="myfunction(b0.value)">
                     <input class="btn" type="button" name="bp" value="." onclick="myfunction(bp.value)">
                     <input class="btn" type="button" name="divv" value="/" onclick="myfunction(divv.value)">
                     <input class="blue" type="button" value="=" onclick="displayResult.value=eval(displayResult.value)">
                 </div>
+                <button type="reset" id="btn">AC</button>
             </div>
         </form>
     </div>
