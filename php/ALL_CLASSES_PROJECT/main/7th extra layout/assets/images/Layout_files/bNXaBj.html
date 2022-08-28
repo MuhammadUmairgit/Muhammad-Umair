@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<!-- saved from url=(0048)https://cdpn.io/adriangyuricska/fullpage/bNXaBj# -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  
+  
+<link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+<meta name="apple-mobile-web-app-title" content="CodePen">
+
+<link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+
+<link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+
+
+  <title>CodePen - Layout</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./normalize.min.css">
+
+  
+  
+<style>
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300,600,800,400);
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #5d676c;
+  font-family: "Open Sans", sans-serif;
+}
+
+.l-site {
+  margin: 0 auto;
+  max-width: 1600px;
+  position: relative;
+  z-index: 1;
+}
+.l-site:before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 50%;
+  display: block;
+  background: #3a4043;
+  z-index: 1;
+}
+
+.l-page {
+  position: relative;
+  margin-left: 240px;
+  background: #fff;
+  z-index: 2;
+  box-shadow: 1px 0 25px rgba(0, 0, 0, 0.25);
+  -webkit-transition: 0.35s;
+  -moz-transition: 0.35s;
+  transition: 0.35s;
+}
+
+.l-nav {
+  position: absolute;
+  width: 240px;
+  display: block;
+  background: #3a4043;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+}
+
+.band h1 {
+  margin: 0;
+  padding: 0 0 10px;
+  color: #fff;
+  font-size: 32px;
+}
+.band p {
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  font-size: 17px;
+}
+
+.band-container {
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  min-height: 85vh;
+  max-width: 960px;
+  display: table;
+  position: relative;
+  padding: 0 3em;
+}
+
+.band-inner {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 3em 0 4em;
+}
+
+.band-a {
+  background: #69D2E7;
+}
+
+.band-b {
+  background: #F9D423;
+}
+
+.band-c {
+  background: #F38630;
+}
+
+.band-d {
+  background: #FF4E50;
+}
+
+.nav {
+  width: 180px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 30px;
+  overflow: auto;
+}
+.nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.nav li {
+  margin: 0;
+  padding: 0;
+  -webkit-transition: 0.25s;
+  -moz-transition: 0.25s;
+  transition: 0.25s;
+}
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 800;
+  display: block;
+  padding: 10px 0;
+}
+.nav .nav-primary {
+  opacity: 1;
+}
+.nav .nav-primary:hover {
+  opacity: 0.7;
+}
+.nav .nav-secondary {
+  opacity: 0.4;
+}
+.nav .nav-secondary:hover {
+  opacity: 0.7;
+}
+
+.menu {
+  display: none;
+  position: fixed;
+  top: 25px;
+  left: 1.5em;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  z-index: 10;
+}
+.menu:hover .menu-hamburger:before,
+.menu:hover .menu-hamburger:after {
+  width: 24px;
+}
+.menu.is-active .menu-hamburger {
+  background: none;
+}
+.menu.is-active .menu-hamburger:before,
+.menu.is-active .menu-hamburger:after {
+  top: 0;
+  width: 24px;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.menu.is-active .menu-hamburger:after {
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.menu.is-active .menu-hamburger:hover {
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+.menu-hamburger {
+  position: relative;
+  width: 24px;
+  height: 4px;
+  margin: 10px 0;
+  background: #fff;
+  border-radius: 4px;
+  transition: all 300ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.menu-hamburger:before, .menu-hamburger:after {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 4px;
+  background: #fff;
+  position: absolute;
+  border-radius: 4px;
+  transition: all 300ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.menu-hamburger:before {
+  top: -8px;
+  left: 0;
+  width: 22px;
+}
+.menu-hamburger:after {
+  top: 8px;
+  width: 16px;
+  left: 0;
+}
+
+@media screen and (max-width: 980px) {
+  .menu {
+    display: block;
+  }
+
+  .l-site.is-open {
+    overflow: hidden;
+  }
+  .l-site.is-open .l-page {
+    -webkit-transform: translateX(240px);
+    -moz-transform: translateX(240px);
+    -ms-transform: translateX(240px);
+    -o-transform: translateX(240px);
+    transform: translateX(240px);
+  }
+
+  .l-page {
+    margin-left: 0;
+    z-index: 3;
+  }
+
+  .l-nav {
+    z-index: 2;
+  }
+
+  .band-container {
+    padding: 0 1.5em;
+  }
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
+</head>
+
+<body translate="no">
+  <div class="l-site">
+  <div class="l-nav">
+    <nav class="nav">
+      <ul>
+        <li class="nav-primary"><a href="https://cdpn.io/adriangyuricska/fullpage/bNXaBj#">Home</a></li>
+        <li class="nav-primary"><a href="https://cdpn.io/adriangyuricska/fullpage/bNXaBj#">Approach</a></li>
+        <li class="nav-primary"><a href="https://cdpn.io/adriangyuricska/fullpage/bNXaBj#">Work</a></li>
+        <li class="nav-primary"><a href="https://cdpn.io/adriangyuricska/fullpage/bNXaBj#">People</a></li>
+        <li class="nav-secondary"><a href="https://cdpn.io/adriangyuricska/fullpage/bNXaBj#">Jobs</a></li>
+        <li class="nav-secondary"><a href="https://cdpn.io/adriangyuricska/fullpage/bNXaBj#">Blog</a></li>
+        <li class="nav-secondary"><a href="https://cdpn.io/adriangyuricska/fullpage/bNXaBj#">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="l-page">
+    <div class="menu">
+      <div class="menu-hamburger"></div>
+    </div>
+    <section class="band band-a">
+      <div class="band-container">
+        <div class="band-inner">
+          <h1>Lorem ipsum dolor</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porta, tellus ut convallis luctus, lorem diam mattis arcu, eu consequat dui tortor eget lacus. Donec metus ligula, rutrum volutpat neque vel, porta tincidunt dui. Phasellus convallis tristique nunc. Integer nunc nunc, finibus a maximus at, viverra ut lorem. Etiam id velit risus. Vestibulum sapien mauris, fermentum nec luctus nec, fringilla non orci. Nullam blandit porta tincidunt. Donec placerat pretium dapibus. Ut interdum lorem eu nibh tincidunt vulputate. Aenean aliquam gravida quam, vel pulvinar odio. Pellentesque sed feugiat ligula. Quisque sagittis porttitor dui, ac lacinia mauris tempor vel. Donec rutrum lorem id nulla consequat vulputate.</p>
+        </div>
+      </div>
+    </section>
+    <section class="band band-b">
+      <div class="band-container">
+        <div class="band-inner">
+          <h1>Proin sed aliquet</h1>
+          <p>Proin sed aliquet tellus. Etiam bibendum ligula in rhoncus imperdiet. Sed a sollicitudin dolor. Integer leo enim, tincidunt vel sagittis vel, vehicula non quam. Nunc mattis bibendum massa vel volutpat. Duis ligula ante, elementum luctus felis ut, ultricies aliquam dolor. Nunc et est mattis, fermentum nisl et, volutpat lacus. Nam ullamcorper urna non odio luctus volutpat. Praesent efficitur in risus at porttitor.</p>
+        </div>
+      </div>
+    </section>
+    <section class="band band-c">
+      <div class="band-container">
+        <div class="band-inner">
+          <h1>Sed consectetur neque</h1>
+          <p>Sed consectetur neque et libero placerat, dapibus laoreet sem condimentum. Nunc suscipit pharetra nunc ac interdum. Quisque justo magna, porttitor quis bibendum eu, ultrices nec justo. Cras mattis ut lectus at ullamcorper. Mauris vestibulum est sed sapien euismod, a pretium arcu lacinia. Donec pharetra non massa ac rhoncus. In in magna felis. Ut porta nec nunc a condimentum. Nullam ultricies sollicitudin enim ac scelerisque. Nam porta, leo in euismod suscipit, elit lorem eleifend neque, non hendrerit quam odio quis felis. Praesent id ullamcorper neque, in fermentum mauris. Curabitur sodales erat sed nisi dictum, sit amet vehicula eros malesuada.</p>
+        </div>
+      </div>
+    </section>
+    <section class="band band-d">
+      <div class="band-container">
+        <div class="band-inner">
+          <h1>Nulla tempor laoreet</h1>
+          <p>Nulla tempor laoreet sagittis. Donec molestie odio sit amet tincidunt egestas. Ut ut nisi nec felis vehicula pharetra. Nunc ullamcorper vitae lectus vitae consectetur. Quisque pharetra lorem metus, at lacinia magna malesuada non. Maecenas tristique risus quis massa convallis tempus in non turpis. Mauris pretium purus sed lacus euismod, eu cursus massa commodo. Nulla in erat ut ex imperdiet iaculis. Aliquam erat volutpat. Sed pellentesque et neque vitae accumsan. Etiam nec dolor quis est dignissim viverra. Nunc et pulvinar felis. Nulla in varius turpis. Curabitur non diam libero. Nam porttitor orci in metus sagittis</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+    <script src="./stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js.download"></script>
+
+  <script src="./jquery.min.js.download"></script>
+      <script id="rendered-js">
+$('.menu').on('click', function () {
+  if ($('.l-site').hasClass('is-open')) {
+    $('.menu').removeClass('is-active');
+    $('.l-site').removeClass('is-open');
+  } else {
+    $('.menu').addClass('is-active');
+    $('.l-site').addClass('is-open');
+  }
+});
+//# sourceURL=pen.js
+    </script>
+
+  
+
+
+
+
+ 
+</body></html>

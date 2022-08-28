@@ -1,0 +1,114 @@
+*{
+    margin: 0px auto;
+    font-family: sans-serif;
+    background-color: rgb(0 255 255);
+}
+body{
+    width: 100%;
+    text-align: center ;
+    margin-top: 100px;
+}
+#btn_1{
+    color: lightcoral;
+    width: 20%;
+    background-color: black;
+    border: none;
+    padding: 10px 0px;
+    margin: 0px 0px 10px 0px;
+    font-size: 17px;
+}
+#btn_1:hover{
+    background-color: gray;
+    color: honeydew;
+}
+#btn_2{
+    color: lightcoral;
+    width: 20%;
+    background-color: black;
+    border: none;
+    padding: 10px 0px;
+    margin: 0px 0px 10px 0px;
+    font-size: 17px;
+}
+#btn_2:hover{
+    background-color: gray;
+    color: honeydew;
+}
+#btn_3{
+    color: lightcoral;
+    width: 20%;
+    background-color: black;
+    border: none;
+    padding: 10px 0px;
+    margin: 0px 0px 10px 0px;
+    font-size: 17px;
+}
+#btn_3:hover{
+    background-color: gray;
+    color: honeydew;
+}
+#btn_4{
+    color: lightcoral;
+    width: 20%;
+    background-color: black;
+    border: none;
+    padding: 10px 0px;
+    margin: 0px 0px 10px 0px;
+    font-size: 17px;
+}
+#btn_4:hover{
+    background-color: gray;
+    color: honeydew;
+}
+#btn_5{
+    color: lightcoral;
+    width: 20%;
+    background-color: black;
+    border: none;
+    padding: 10px 0px;
+    margin: 0px 0px 10px 0px;
+    font-size: 17px;
+}
+#btn_5:hover{
+    background-color: gray;
+    color: honeydew;
+}
+#btn_6{
+    color: lightcoral;
+    width: 20%;
+    background-color: black;
+    border: none;
+    padding: 10px 0px;
+    margin: 0px 0px 10px 0px;
+    font-size: 17px;
+}
+#btn_6:hover{
+    background-color: gray;
+    color: honeydew;
+}
+#btn_7{
+    color: lightcoral;
+    width: 20%;
+    background-color: black;
+    border: none;
+    padding: 10px 0px;
+    margin: 0px 0px 10px 0px;
+    font-size: 17px;
+}
+#btn_7:hover{
+    background-color: gray;
+    color: honeydew;
+}
+#btn_8{
+    color: lightcoral;
+    width: 20%;
+    background-color: black;
+    border: none;
+    padding: 10px 0px;
+    margin: 0px 0px 10px 0px;
+    font-size: 17px;
+}
+#btn_8:hover{
+    background-color: gray;
+    color: honeydew;
+}
