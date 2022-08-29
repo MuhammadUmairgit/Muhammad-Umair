@@ -29,9 +29,6 @@
     <form action="main/7th extra layout" method="get">
         <button id="btn_7" type="submit" onclick="myFunction7()" >7th extra layout</button>
     </form>
-    <form action="main/8th extra layout" method="get">
-        <button id="btn_8" type="submit" onclick="myFunction8()" >8th extra layout</button>
-    </form>
 
 
     <script>
@@ -56,9 +53,6 @@
         // function myFunction7 () {
         //     alert("My Seventh Class");
         // }
-        function myFunction8 () {
-            alert("this class is not completed");
-        }
     </script>
 </body>
 </html>
