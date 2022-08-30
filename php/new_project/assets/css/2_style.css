@@ -1,0 +1,44 @@
+*{
+    margin: 0px auto;
+    font-family: sans-serif;
+}
+.header_navigation{
+    border: none;
+    background-color: rgb(20 26 32);
+    color: white;
+}
+#form_button{
+    border: none;
+    background-color: rgb(20 26 32);
+    color: white;
+    margin-top: 34px;
+}
+nav ul{
+    margin-left: 20px;
+}
+.header_navigation:hover{
+    color: rgb(204 162 92);
+}
+nav ul button{
+    margin-left: 25px;
+    font-size: 17px;
+    margin-top: 24px;
+}
+nav ul{
+    display: flex;
+    margin-left: -382px;
+}
+header{
+    display: flex;
+}
+header h1{
+    color: white;
+    margin-top: 24px;
+    margin-left: -190px;
+    font-weight: 600;
+}
+header img{
+    margin-top: 10px;
+    margin-left: 165px;
+    width: 55px;
+}
