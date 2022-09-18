@@ -16,8 +16,11 @@ function taskFormHandler(event) {
 
   const taskInputValue = taskInput.value;
   if (!taskInputValue) {
-    alert("please fill the task");
-    return;
+    document.querySelector("#alert").style.display = "block";
+    
+  }
+  else {
+    document.querySelector("#alert").style.display = "none";
   }
 
   const listElement = document.createElement("li");
@@ -78,25 +81,24 @@ function filterHandler(event) {
 // }
 
 
-
-const hover = document.querySelector("#hover");
+// const para = document.querySelector(".para");
+// const hover = document.querySelector("#hover");
 // hover.addEventListener('click',firsthover);
 
 // function over (){
-//   // event.preventDefault();
 //   hover.style.backgroundColor = "red";
+//   document.querySelector(".para").style.display = "block";
+//   hover.style.color = "white";
+//   hover.style.border = "none";
+
 // }
 
 
 // function out (){
-//   // event.preventDefault();
+//   document.querySelector(".para").style.display = "none";
 //   hover.style.backgroundColor = "";
+//   hover.style.backgroundColor = "yellow";
+//   hover.style.color = "black";
+//   hover.style.border = "none";
 // }
 
-
-function over (){
-  hover.innerHTML = "<h2>on mouseover</h2>";
-}
-function out (){
-  hover.innerHTML = "<p>menu</p>";
-}
