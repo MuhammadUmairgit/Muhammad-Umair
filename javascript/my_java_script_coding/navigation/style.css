@@ -1,0 +1,30 @@
+*{
+	margin: 0px;
+	font-family: sans-serif;
+}
+header{
+	display: flex;
+	background-color: black;
+}
+.container{
+	width: 85%;
+	margin: 0 auto;
+}
+nav ul{
+	display: flex;
+}
+nav ul li{
+	color: #a7a7a7;
+	margin-right: 2.813rem;
+    list-style-type: none;
+}
+#container{
+	display: flex;
+	justify-content: space-between;
+}
+#sub-header{
+	display: flex;
+	justify-content: space-between;
+	padding: 1.25rem 0px 1.25rem 0px;
+	align-items: center;
+}

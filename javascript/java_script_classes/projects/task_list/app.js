@@ -1,4 +1,5 @@
 //DOM UI VARIABLES
+document.querySelector("#alert").style.display = "none";
 const taskForm = document.querySelector("#task-form");
 const taskInput = document.querySelector("#task");
 const collection = document.querySelector(".collection");
@@ -14,29 +15,37 @@ filter.addEventListener("input", filterHandler);
 function taskFormHandler(event) {
   event.preventDefault(); //default functionality ko rukdega
 
-  const taskInputValue = taskInput.value;
+
+
+
+
+const taskInputValue = taskInput.value;
   if (!taskInputValue) {
     document.querySelector("#alert").style.display = "block";
     
   }
   else {
     document.querySelector("#alert").style.display = "none";
-  }
 
-  const listElement = document.createElement("li");
-  listElement.className = "collection-item";
 
-  listElement.innerHTML = `${taskInputValue}
-    <a href="#" class="delete-item secondary-content">
-      <i class="fa fa-remove"></i>
-    </a>`;
 
-  collection.append(listElement);
 
-  taskInput.value = "";
 
-  //bind delete functionality
-  listElement
+
+const listElement = document.createElement("li");
+listElement.className = "collection-item";
+
+listElement.innerHTML = `${taskInputValue}
+  <a href="#" class="delete-item secondary-content">
+    <i class="fa fa-remove"></i>
+  </a>`;
+
+collection.append(listElement);
+
+taskInput.value = "";
+
+//bind delete functionality
+listElement
     .querySelector(".delete-item i")
     .addEventListener("click", function (event) {
       event.preventDefault();
@@ -45,6 +54,7 @@ function taskFormHandler(event) {
         currentElement.parentElement.parentElement.remove();
       }
     });
+  }
 }
 
 function clearTaskHandler(event) {
@@ -72,6 +82,13 @@ function filterHandler(event) {
 }
 
 
+
+
+
+
+
+
+
 // const hover = document.querySelector("#hover");
 // hover.addEventListener('click',firsthover);
 // function firsthover (event){
@@ -84,6 +101,7 @@ function filterHandler(event) {
 // const para = document.querySelector(".para");
 // const hover = document.querySelector("#hover");
 // hover.addEventListener('click',firsthover);
+
 
 // function over (){
 //   hover.style.backgroundColor = "red";
