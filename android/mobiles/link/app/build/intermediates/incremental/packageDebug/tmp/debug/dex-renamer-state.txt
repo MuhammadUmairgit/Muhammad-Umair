@@ -1,0 +1,4 @@
+#Thu Sep 15 19:52:12 UZT 2022
+base.0=C\:\\Users\\Muhammad Umair\\Desktop\\umair html\\mobiles\\link\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+renamed.0=classes.dex
+path.0=classes.dex
