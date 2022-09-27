@@ -10,8 +10,7 @@ if (shopItemButton.length > 0) {
 }
 
 function shopItemButtonHandler(event) {
-    event.preventDefault();
-    const currentElement = event.target;
+    event.preventDefault();     const currentElement = event.target;
     const shopItem = currentElement.parentElement.parentElement;
     const shopItemTitle = shopItem.querySelector(".shop-item-title");
     const shopItemImage = shopItem.querySelector(".shop-item-image");
@@ -35,6 +34,32 @@ function shopItemButtonHandler(event) {
 cartItems.innerHTML += itemHtml;
 
 bindAllDeleteButtons();
+
+  const shopItemPricecalculator  = document.querySelectorAll(".shop-item-price");
+
+  if (shopItemPricecalculator.length > 0) {
+    shopItemPricecalculator.forEach(function (singleshopItemPricecalculator){
+      shopItemPricecalculator.addEventListener("click", shopItemPriceinnervalue);
+    });
+  }
+
+
+  function shopItemPriceinnervalue(event) {
+    event.preventDefault();
+    const price = shopItemTitle.innerText;
+    const calculatedPrice = document.querySelector(".cart-total-price");
+    const calculatedPrice1 = calculatedPrice.innerText;
+
+    price.eval(calculatedPrice1);
+
+
+  }
+
+
+
+
+
+
 }
 
 function bindAllDeleteButtons() {
