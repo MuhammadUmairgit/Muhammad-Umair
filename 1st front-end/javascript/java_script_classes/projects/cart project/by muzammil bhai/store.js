@@ -25,20 +25,39 @@ function shopItemButtonHandler(event) {
   //   console.log(title);
   //   console.log(imageUrl);
   //   console.log(price);
-  const itemHtml = `<div class="cart-row">
+
+  //check if this text is already exist
+  let isTitleAlreadyExist = false;
+
+  const allCartItemTitles = document.querySelectorAll(".cart-item-title");
+  if (allCartItemTitles.length > 0) {
+    allCartItemTitles.forEach((singleCartItem) => {
+      const cartTitle = singleCartItem.innerText;
+      if (title == cartTitle) {
+        alert("this title is already exist");
+        isTitleAlreadyExist = true;
+      }
+    });
+  }
+
+  if (!isTitleAlreadyExist) {
+    const itemHtml = `<div class="cart-row">
                     <div class="cart-item cart-column">
                         <img class="cart-item-image" src="${imageUrl}" width="100" height="100">
                         <span class="cart-item-title">${title}</span>
                     </div>
-                    <span class="cart-price cart-column">${price}</span>
+                    <span class=" cart-column">$ <span class="cart-price-item-item">${price}</span></span>
                     <div class="cart-quantity cart-column">
                         <input class="cart-quantity-input" type="number" value="1">
                         <button class="btn btn-danger btn-remove" type="button">REMOVE</button>
                     </div>
                 </div>`;
-  cartItems.innerHTML += itemHtml;
+    cartItems.innerHTML += itemHtml;
 
-  bindAllDeleteButtons();
+    bindAllDeleteButtons();
+
+    updateCartTotal();
+  }
 }
 
 function bindAllDeleteButtons() {
@@ -57,5 +76,31 @@ function removeButtonFunction(event) {
   const cartRow = currentElement.parentElement.parentElement;
   if (confirm("Are You Sure")) {
     cartRow.remove();
+    updateCartTotal();
   }
+}
+
+function updateCartTotal() {
+  const allPrices = document.querySelectorAll(".cart-price-item-item");
+  let total = 0;
+
+  if (allPrices.length > 0) {
+    allPrices.forEach((singlePrice) => {
+      const price = singlePrice.innerText;
+      total += parseFloat(price);
+    });
+  }
+
+  // const total = [...allPrices]
+  //   .map((singleElement) => {
+  //     return singleElement.innerText;
+  //   })
+  //   .reduce((jamakarega, currentValue) => {
+  //     return jamakarega + parseFloat(currentValue);
+  //   }, 0);
+
+  // console.log(total, "total");
+
+  const totalElement = document.querySelector(".cart-total-price");
+  totalElement.innerText = `$${total.toFixed(2)}`;
 }
