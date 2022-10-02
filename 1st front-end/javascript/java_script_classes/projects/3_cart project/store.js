@@ -22,6 +22,17 @@ function shopItemButtons(event) {
 
   let isTitleAlreadyExist = false;
 
+  const allCartItemTitles = document.querySelector(".cart-item-title");
+
+  if (allCartItemTitles.length > 0) {
+    allCartItemTitles.forEach((singleCartItem) = >{
+      const cartTitle = singleCartItem.innerText;
+      if (title == cartTitle) {
+        alert("this title is already exist");
+        isTitleAlreadyExist = true;
+    });
+  }
+
   if (!isTitleAlreadyExist) {
     const itemHtml = `<div class="cart-row">
         <div class="cart-item cart-column">
@@ -36,5 +47,11 @@ function shopItemButtons(event) {
     </div>`;
 
     cartItems.innerHTML += itemHtml;
+    
+    bindAllDeleteButtons();
+
+    cartQuantityEventListeners();
+
+    updateCartTotal();
   }
 }
