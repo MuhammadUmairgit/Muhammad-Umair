@@ -1,0 +1,57 @@
+*{
+    margin: 0px auto;
+    font-family: sans-serif;
+}
+.header_navigation{
+    border: none;
+    background-color: white;
+}
+#form_button{
+    border: none;
+    background-color: white;
+    /* color: rgb(0 124 80); */
+    margin-top: 25px;
+}
+#for_background{
+    background-color: white;
+}
+.header_navigation:hover{
+    color: rgb(204 162 92);
+}
+nav ul button{
+    margin-left: 20px;
+    font-size: 17px;
+    margin-top: 24px;
+}
+nav ul{
+    display: flex;
+    margin-left: 240px;
+}
+header{
+    display: flex;
+    margin-top: -100px;
+    background-color: white;
+}
+header h1{
+    color: rgb(0 124 80);
+    margin-top: 24px;
+    margin-left: 10px;
+    font-weight: 600;
+}
+header img{
+    margin-top: 10px;
+    margin-left: 170px;
+    width: 55px;
+}
+#complaint{
+    background-color: green;
+    padding-top: 10px;
+}
+#complaint h2{
+    margin-top: 100px;
+}
+#sub_complaint{
+    background-color: white;
+    width: 50%;
+    margin-top: 10px;
+}
