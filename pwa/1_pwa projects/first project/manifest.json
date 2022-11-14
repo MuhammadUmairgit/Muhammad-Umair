@@ -1,0 +1,17 @@
+{
+    "lang": "en-us",
+    "name": "My Simple PWA",
+    "shortName": "SimplePWA",
+    "description": "SamplePWA for testing purposes",
+    "start_url": "/",
+    "background-color": "#2f3d58",
+    "theme_color": "#2f3d58",
+    "orientation": "any",
+    "display": "standalone",
+    "icon": [
+        {
+            "src": "icon512.png",
+            "sizes": "512x512"
+        }
+    ]
+}
