@@ -1,0 +1,18 @@
+service worker
+It is a JavaScript file that runs separately from the main browser thread
+
+Service Worker Lifecycle
+
+you have 3 phases
+
+1-Registration Phase
+2-Installation Phase / Wait Phase (if you have old service worker in your url)
+3-Activation Phase
+
+// it will recieve all network request whether it is offline mode or it is online mode
+
+don't comment in service worker
+
+http://debuggerdotbreak.judahgabriel.com/2018/04/13/i-built-a-pwa-and-published-it-in-3-app-stores-heres-what-i-learned/
+
+new service worker is register on every new tab

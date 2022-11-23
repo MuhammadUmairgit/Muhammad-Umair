@@ -1,0 +1,235 @@
+/*=========================================
+=            TESTING REPO LINK            =
+=========================================*/
+
+https://github.com/MuzammilRafay/Testing-B4-Repo
+
+/*=====  End of TESTING REPO LINK  ======*/
+
+
+
+https://git-scm.com/downloads
+
+
+restart your computer
+
+
+https://www.w3schools.com/git/
+
+
+/*===============================================
+=            CONFIGURATION OF GITHUB            =
+===============================================*/
+run these commands step by step
+
+git config --global user.name "yourname"
+git config --global user.email "yourgmail@gmail.com"
+
+
+https://www.w3schools.com/git/git_security_ssh.asp?remote=github
+
+ssh-keygen -t rsa -b 4096 -C "test@w3schools.com"
+
+it will generate this file
+/c/Users/user/.ssh/id_rsa.pub
+
+
+
+Open github website and login to your account
+
+
+->setting->ssh and gps keys
+https://www.w3schools.com/git/git_remote_add_ssh.asp?remote=github
+
+/*=====  End of CONFIGURATION OF GITHUB  ======*/
+
+
+
+
+CREATE REPOSITORY FROM GITHUB ACCOUNT
+
+echo "# learn-github-batch-4" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/DUMMYNAME
+git push -u origin main
+
+
+
+GITHUB STEPS
+
+run this command git status
+first you need to add the file 
+then you can commit it
+then you can push it
+
+
+
+
+git add filename
+
+git add .
+
+git add --all
+
+
+
+
+
+/*===================================================
+=            CREATE NEW BRANCH IN GITHUB            =
+===================================================*/
+git branch areeb-testing
+/*=====  End of CREATE NEW BRANCH IN GITHUB  ======*/
+
+
+/*======================================
+=            Branch Listing            =
+======================================*/
+git branch
+/*=====  End of Branch Listing  ======*/
+
+
+/*======================================
+=            Switch Branch            =
+======================================*/
+git swtich areeb-testing
+or
+git checkout areeb-testing
+/*=====  End of Switch Branch  ======*/
+
+
+/*====================================
+=            Merge Branch            =
+====================================*/
+git merge branch-name
+
+/*=====  End of Merge Branch  ======*/
+
+
+
+/*=============================================
+=      Get  Branches and Switch Branch   =
+=============================================*/
+
+git fetch && git checkout category-module
+
+/*=====  End of Get All Branches  ======*/
+
+
+/*=================================
+=            Git Clone            =
+=================================*/
+
+copy https link from repository
+
+git clone https://github.com/MuzammilRafay/batch-4.git
+
+
+
+/*=====  End of Git Clone  ======*/
+
+
+
+/*========================================
+=            GET UPDATED CODE            =
+========================================*/
+
+git pull
+or
+git fetch && git pull
+
+/*=====  End of GET UPDATED CODE  ======*/
+
+
+/*==============================================
+=            Ingore files in github            =
+==============================================*/
+https://www.w3schools.com/git/git_ignore.asp?remote=github
+
+create .gitignore file from this command
+
+touch .gitignore
+
+
+# ignore ALL .log files
+*.log
+
+# ignore ALL files in ANY directory named temp
+temp/
+
+
+/*=====  End of Ingore files in github  ======*/
+
+
+User Can Also Merge Branches By Creating Pull Request From Github website.
+
+
+
+
+
+
+/*===================================================
+=            LIVE SITE WITH GITHUB PAGES            =
+===================================================*/
+https://muzammilrafay.github.io/marble-layout/
+
+https://www.youtube.com/watch?v=QyFcl_Fba-k&ab_channel=TheNetNinja
+
+
+https://www.educative.io/answers/how-to-make-your-site-live-on-github-pages
+
+https://www.educative.io/api/edpresso/shot/5309600074039296/image/4933298259230720
+
+https://www.educative.io/api/edpresso/shot/5309600074039296/image/4783793937317888
+
+https://www.educative.io/api/edpresso/shot/5309600074039296/image/5263203287171072
+
+/*=====  End of LIVE SITE WITH GITHUB PAGES  ======*/
+
+
+
+
+
+https://www.w3schools.com/git/git_remote_fork.asp?remote=github
+
+
+
+/*=============================================
+=            SAVED FILE TEMPORARY             =
+=============================================*/
+
+git stash temporarily shelves (or stashes) changes you've made to your working copy so you can work on something else, and then come back and re-apply them later on. Stashing is handy if you need to quickly switch context and work on something else, but you're mid-way through a code change and aren't quite ready to commit.
+
+git stash
+---- saved files temporary
+
+git stash apply
+--- apply all stash files in repo
+
+
+git stash clear
+---- clear the stash
+
+
+git stash pop
+----re apply the stash
+
+
+/*=====  End of SAVED FILE TEMPORARY   ======*/
+
+
+
+
+
+
+
+/*=====================================================
+=            YOU CAN TRY ANOTHER PLATFORMS            =
+=====================================================*/
+GITLAB
+BITBUCKET
+
+/*=====  End of YOU CAN TRY ANOTHER PLATFORMS  ======*/

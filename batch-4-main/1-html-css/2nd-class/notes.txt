@@ -1,0 +1,18 @@
+https://www.w3schools.com/css/css_intro.asp
+
+we have two attributes
+
+class and id
+
+id is used for unique element
+
+you can use class in multiple elements
+
+id is used only one element you can use class for applying the 
+css in multiple elements.
+
+div is like a box
+
+margin is used for creating the space out of the box
+padding is used for creating the space inside of the box
+

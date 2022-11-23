@@ -1,0 +1,20 @@
+https://www.w3schools.com/html/html_responsive.asp
+
+Setting The Viewport
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+Media Queries
+
+
+
+
+Css Units
+
+https://www.w3schools.com/cssref/css_units.asp
+https://nekocalc.com/px-to-rem-converter
+
+Responsive
+https://www.w3schools.com/html/html_responsive.asp
+
+https://git-scm.com/downloads

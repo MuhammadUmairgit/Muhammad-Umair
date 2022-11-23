@@ -1,0 +1,6 @@
+we need two things
+
+1-manifest file
+2-service worker file
+
+
