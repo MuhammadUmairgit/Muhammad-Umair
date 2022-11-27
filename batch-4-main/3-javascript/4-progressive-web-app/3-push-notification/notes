@@ -1,5 +1,0 @@
-//public & private key -> server -> save
-
-// then we send the push notification from server to the keys
-
-//we have alot of libraries for doing this things like onesignal, firebase
