@@ -44,13 +44,20 @@ caches.open(cacheName2).then((cache) => {
 });
 
 //need clarification
-caches.open(cacheName).then((cache) => {
-  cache.match("/index2.html").then((response) => {
-    if (response) {
-      caches.open(cacheName2).then((cache2) => {
-        //put means update
-        cache2.put("/index.html", response);
-      });
-    }
+caches.open(cacheName2).then((cache) => {
+  // cache.match("/index2.html").then((response) => {
+  //   if (response) {
+  //     caches.open(cacheName2).then((cache2) => {
+  //       //put means update
+  //       cache2.put("/index.html", response);
+  //     });
+  //   }
+  // });
+
+  cache.match("index.html").then((res) => {
+    // res.text().then(console.log);
+    res.text().then((check) => console.log(check));
   });
+
+  // cache.put("index.html", new Response("My own Html"));
 });
