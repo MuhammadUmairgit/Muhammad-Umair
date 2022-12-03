@@ -115,8 +115,8 @@
         <script>
             //service worker it will run on background
             //navigator = browser
-            if ("serviceWorker" in navigator) {
-              navigator.serviceWorker.register("/sw.js", { scope: "/" });
+            if (navigator.serviceWorker) {
+              navigator.serviceWorker.register("/sw.js");
             }
           </script>
         <script src="store.js" ></script>
