@@ -77,13 +77,32 @@ self.addEventListener("fetch", (event) => {
   if (event.request.url.match(location.origin)) {
     //response from cache if available otherwise update the cache
     event.respondWith(staticCacheFunction(event.request));
-  } else if (
-    event.request.url.match("https://api.giphy.com/v1/gifs/trending")
-  ) {
+  } else if (event.request.url.match("https://api.gify.com/v1/gifs/trending")) {
     //first try network otherwise get from cache if you are offline
     event.respondWith(fallbackCache(event.request));
-  } else if (event.request.url.match("giphy.com/media")) {
+  } else if (event.request.url.match("gify.com/media")) {
     //if you have this images in cache the return from cache otherwise update in cache
-    event.respondWith(staticCacheFunction(event.request, "giphy"));
+    event.respondWith(staticCacheFunction(event.request, "gify"));
+  }
+});
+
+const cleanGiphyExtraUrlFromCache = (gifysUrls) => {
+  caches.open("gify").then((cache) => {
+    //get all cache entries
+    cache.keys().then((keys) => {
+      //now you have the array of keys
+      if (keys.length > 0) {
+        keys.forEach((singleKey) => {
+          //if entry is not part of current gifys then delete it from cache
+          if (!gifysUrls.includes(singleKey.url)) cache.delete(singleKey);
+        });
+      }
+    });
+  });
+};
+
+self.addEventListener("message", (event) => {
+  if (event.data.action == "cleanGiphyCache") {
+    cleanGiphyExtraUrlFromCache(event.data.gifysUrls);
   }
 });
