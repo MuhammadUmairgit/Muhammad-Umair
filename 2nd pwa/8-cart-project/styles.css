@@ -8,6 +8,9 @@
     font-weight: normal;
     font-style: normal;
 }
+.shop-item-details{
+    justify-content: space-between;
+}
 
 * {
     box-sizing: border-box;
