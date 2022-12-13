@@ -40,3 +40,15 @@ const staticCacheFunction = (request, cacheName = staticCacheName) => {
     });
   });
 };
+
+const fallbackCache = (request, cacheName = staticCacheName) => {
+  if (!networkResponse.ok) throw "fetch error";
+
+  caches
+    .open(cacheName)
+    .then((cache) => {
+      cache.put(request, networkRespose);
+      return networkResponse.clone();
+    })
+    .catch((error) => caches.match(request));
+};

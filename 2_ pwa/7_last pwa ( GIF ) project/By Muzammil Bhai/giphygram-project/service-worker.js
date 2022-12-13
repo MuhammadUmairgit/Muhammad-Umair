@@ -53,7 +53,7 @@ const staticCacheFunction = (request, cacheName = staticCacheName) => {
 const fallbackCache = (request, cacheName = staticCacheName) => {
   //try network
   return (
-    fetch(request)
+    fetch(request)``
       .then((networkResponse) => {
         //check if you are not online then throw it and it will go to catch method
         if (!networkResponse.ok) throw "fetch error";
