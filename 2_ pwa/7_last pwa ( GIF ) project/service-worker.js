@@ -29,3 +29,14 @@ self.addEventListener("activate", (event) => {
     });
   });
 });
+
+const staticCacheFunction = (request, cacheName = staticCacheName) => {
+  return cache.match(request).then((cacheResponse) => {
+    if (cacheResponse) return cacheResponse;
+
+    return fetch(request).then((networkResponse) => {
+      caches.open(cacheName).then((cache) => cache.put(networkResponse));
+      return networkResponse.clone;
+    });
+  });
+};
