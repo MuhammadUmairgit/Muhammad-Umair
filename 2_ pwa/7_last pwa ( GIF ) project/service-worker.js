@@ -42,13 +42,19 @@ const staticCacheFunction = (request, cacheName = staticCacheName) => {
 };
 
 const fallbackCache = (request, cacheName = staticCacheName) => {
-  if (!networkResponse.ok) throw "fetch error";
-
-  caches
-    .open(cacheName)
-    .then((cache) => {
-      cache.put(request, networkRespose);
-      return networkResponse.clone();
+  return fetch(request)``
+    .then((networkResponse) => {
+      if (!networkResponse.ok) throw "fetch error";
+      caches.open(cacheName).then((cache) => {
+        cache.put(request, networkResponse);
+      });
+      return networkResponse.clone;
     })
     .catch((error) => caches.match(request));
 };
+
+self.addEventListener("fetch", (event) => {
+  if (event.request.url.match(location.origin)) {
+    event.respondWith(staticCacheFunction(event.request));
+  }
+});
