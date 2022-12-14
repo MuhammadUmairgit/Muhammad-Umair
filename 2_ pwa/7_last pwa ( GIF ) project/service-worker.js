@@ -56,5 +56,27 @@ const fallbackCache = (request, cacheName = staticCacheName) => {
 self.addEventListener("fetch", (event) => {
   if (event.request.url.match(location.origin)) {
     event.respondWith(staticCacheFunction(event.request));
+  } else if (event.request.url.match("https://api.gify.com/v1/gifs/trending")) {
+    event.respondWith(fallbackcache(event.request));
+  } else if (event.request.url.match("gify.com/media")) {
+    event.respondWith(staticCacheFunction(event.request, "gify"));
+  }
+});
+
+const cleanGiphyExtraUrlFromCache = (gifyUrls) => {
+  caches.open("giphy").then((cache) => {
+    cache.keys().then((keys) => {
+      if (keys.length > 0) {
+        keys.forEach((singleKey) => {
+          if (!giphyUrl.include(singleKeyUrl)) cache.delete(singleKey);
+        });
+      }
+    });
+  });
+};
+
+self.addEventListener("message", (event) => {
+  if (event.data.action == "cleanGiphyCache") {
+    cleanGiphyExtraUrlFromCache(event.data.giphyUrls);
   }
 });
