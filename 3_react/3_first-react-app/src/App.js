@@ -3,6 +3,7 @@ import "./App.css";
 
 function App() {
   const [count, setCount] = useState(0);
+  const [show, setShow] = useState(true);
   // let count = 0;
 
   const incrementHandler = () => {
@@ -16,12 +17,16 @@ function App() {
       setCount((prevCount) => prevCount - 1);
     }
   };
+
   return (
     <div>
       <h1>count : {count}</h1>
       <h2>{count > 0 ? "Value is greater then zero" : "Value is zero"}</h2>
       <button onClick={incrementHandler}>Increment</button>
       <button onClick={decrementHandler}>decrement</button>
+
+      <p>Show and Hide paragraph</p>
+      <button onClick={() => setShow(!show)}>Show and Hide</button>
     </div>
   );
 }
