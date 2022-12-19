@@ -119,3 +119,13 @@ function useState(initialValue) {
 
   return [initialValue,setValue];
 }
+
+
+
+Passing Arguments
+const shoot = (a) => {
+    alert(a);
+  }
+
+//you need to call arrow function then you can pass the argument
+<button onClick={() => shoot("Goal!")}>Take the shot!</button>

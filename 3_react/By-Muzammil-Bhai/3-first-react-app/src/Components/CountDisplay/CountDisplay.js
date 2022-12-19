@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 
 const CountDisplay = (props) => {
   //   console.log(props, "props");
@@ -13,4 +13,6 @@ const CountDisplay = (props) => {
   );
 };
 
-export default CountDisplay;
+//it will prevent re rendering when your component is re render
+//it will re render only when your prop have is change
+export default memo(CountDisplay);
