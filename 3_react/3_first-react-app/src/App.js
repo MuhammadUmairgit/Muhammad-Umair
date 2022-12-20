@@ -1,4 +1,6 @@
 import { useState } from "react";
+import CountDisplay from "./Components/CountDisplay/CountDisplay";
+import ContactUs from "./Components/ContactUs/ContactUs";
 import "./App.css";
 
 function App() {
@@ -20,6 +22,8 @@ function App() {
 
   return (
     <div>
+      <ContactUs />
+      <CountDisplay/>
       <h1>count : {count}</h1>
       <h2>{count > 0 ? "Value is greater then zero" : "Value is zero"}</h2>
       <button onClick={incrementHandler}>Increment</button>
