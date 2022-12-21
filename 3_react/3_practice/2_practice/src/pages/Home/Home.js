@@ -1,5 +1,6 @@
 import React from "react";
 import Display from "../../Components/Display/Display";
+import SubmitButton from "../../Components/SubmitButton/SubmitButton";
 
 function Home() {
   return (
@@ -94,9 +95,7 @@ function Home() {
                   ></textarea>
                 </div>
 
-                <button type="submit" class="btn btn-primary">
-                  Submit
-                </button>
+                <SubmitButton/>
               </form>
             </div>
           </div>
