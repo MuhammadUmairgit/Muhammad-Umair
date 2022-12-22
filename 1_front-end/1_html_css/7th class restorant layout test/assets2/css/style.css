@@ -1,0 +1,23 @@
+* {
+  margin: 0px;
+  font-family: sans-serif;
+}
+nav ul {
+  display: flex;
+  margin-right: 100px;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+}
+#for-logo {
+  margin-left: 150px;
+  margin-top: 15px;
+}
+nav ul li {
+  list-style-type: none;
+  margin-left: 20px;
+}
+#background-image img {
+  width: 100%;
+}
