@@ -47,7 +47,7 @@ function Home() {
                   ></textarea>
                 </div>
 
-                <button type="submit"  class="btn btn-primary">
+                <button type="submit" class="btn btn-primary">
                   Submit
                 </button>
               </form>
@@ -95,7 +95,7 @@ function Home() {
                   ></textarea>
                 </div>
 
-                <SubmitButton/>
+                <SubmitButton />
               </form>
             </div>
           </div>
