@@ -1,6 +1,8 @@
 const taskInput = document.querySelector("#task");
 const taskForm = document.querySelector("#task-form");
 
+document.addEventListener("DOMContentLoaded", getTasksFromLocalStorage);
+
 taskForm.addEventListener("submit", (event) => {
   event.preventDefault();
   const taskInputValue = taskInput.value;
