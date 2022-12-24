@@ -1,7 +1,7 @@
 const taskInput = document.querySelector("#task");
 const taskForm = document.querySelector("#task-form");
 
-document.addEventListener("DOMContentLoaded", getTasksFromLocalStorage);
+// document.addEventListener("DOMContentLoaded", getTasksFromLocalStorage);
 
 taskForm.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -20,7 +20,7 @@ taskForm.addEventListener("submit", (event) => {
   </a>`;
   collection.append(listElement);
 
-  storeTaskInLocalStorage(taskInputValue);
+  // storeTaskInLocalStorage(taskInputValue);
 
   taskInput.value = "";
 
@@ -31,7 +31,7 @@ taskForm.addEventListener("submit", (event) => {
       const currentElement = event.target;
       if (confirm("Are You Sure")) {
         const mainElement = currentElement.parentElement.parentElement;
-        deleteTaskFromLocalStorage(mainElement.innerText);
+        // deleteTaskFromLocalStorage(mainElement.innerText);
         mainElement.remove();
       }
     });
