@@ -1,13 +1,12 @@
-import './App.css';
-import Home from './pages/Home/Home';
+import Home from "./Pages/Home";
+import "./App.css";
 
-function reactSubmit() {
-
-  
-
+function App() {
   return (
-    <Home/>
+    <div className="App">
+      <Home />
+    </div>
   );
 }
 
-export default reactSubmit;
+export default App;

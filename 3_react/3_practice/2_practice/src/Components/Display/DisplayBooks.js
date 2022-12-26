@@ -4,7 +4,7 @@ function Display() {
   return (
     <tbody id="todos-listing">
       <tr>
-        <td>asd</td>
+        <td></td>
         <td></td>
         <td></td>
         <td></td>
