@@ -1,14 +1,16 @@
 import React from "react";
+import DeleteButton from "../DeleteButton/DeleteButton";
 
 function DisplayBooks(props) {
   const books = props?.books;
 
-  const deleteButtonHandler = (event) => {
-    event.preventDefault();
-    const currentElement = event.target.currentElement;
-    const deleteValue = currentElement.parentElement;
-    console.log(deleteValue, "deleteValue");
-  };
+  // const deleteButtonHandler = (event) => {
+  //   event.preventDefault();
+  //   // console.log("deletebutton");
+  //   const deleteConstant = document.getElementById("book-list");
+  //   deleteConstant.remove();
+  //   console.log(deleteConstant, "deleteconst");
+  // };
 
   return (
     <table className="u-full-width">
@@ -29,9 +31,7 @@ function DisplayBooks(props) {
                 <td>{singleBook.author}</td>
                 <td>{singleBook.isbn}</td>
                 <td>
-                  <button class="btn btn-danger" onClick={deleteButtonHandler}>
-                    Delete
-                  </button>
+                <DeleteButton/>
                 </td>
               </tr>
             );

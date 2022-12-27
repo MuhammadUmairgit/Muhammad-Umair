@@ -41,10 +41,8 @@ function Home() {
     setTitle("");
     setAuthor("");
     setIsbn("");
-
-    
   };
-
+  
   return (
     <div className="container">
       <h1>Add Book</h1>
