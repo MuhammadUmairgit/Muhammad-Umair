@@ -1,7 +1,9 @@
 import React from "react";
 
 function DisplayBooks(props) {
-  const books = props?.books;
+  // const books = props?.books;
+  // const handleDeleteBook = props?.handleDeleteBook;
+  const { books, handleDeleteBook, handleEditBook } = props;
   return (
     <table className="u-full-width">
       <thead>
@@ -9,7 +11,8 @@ function DisplayBooks(props) {
           <th>Title</th>
           <th>Author</th>
           <th>ISBN</th>
-          <th></th>
+          <th>Edit</th>
+          <th>Delete</th>
         </tr>
       </thead>
       <tbody id="book-list">
@@ -20,7 +23,19 @@ function DisplayBooks(props) {
                 <td>{singleBook.title}</td>
                 <td>{singleBook.author}</td>
                 <td>{singleBook.isbn}</td>
-                <td></td>
+                <td>
+                  <button onClick={(event) => handleEditBook(event, index)}>
+                    Edit
+                  </button>
+                </td>
+                <td>
+                  <a
+                    href=""
+                    onClick={(event) => handleDeleteBook(event, index)}
+                  >
+                    X
+                  </a>
+                </td>
               </tr>
             );
           })}
