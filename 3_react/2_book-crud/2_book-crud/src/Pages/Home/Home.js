@@ -42,7 +42,15 @@ function Home() {
     setAuthor("");
     setIsbn("");
   };
-  
+
+  const deleteButtonHandler = (event, index) => {
+    event.preventDefault();
+    if (window.confirm("Are You Sure")) {
+      const tempBooks = [...books];
+      tempBooks.splice(index, 1);
+      setBooks(tempBooks);
+    }
+  };
   return (
     <div className="container">
       <h1>Add Book</h1>
@@ -81,7 +89,7 @@ function Home() {
           <input type="submit" value="Submit" className="u-full-width" />
         </div>
       </form>
-      <DisplayBooks books={books} />
+      <DisplayBooks books={books} deleteButtonHandler={deleteButtonHandler} />
     </div>
   );
 }
