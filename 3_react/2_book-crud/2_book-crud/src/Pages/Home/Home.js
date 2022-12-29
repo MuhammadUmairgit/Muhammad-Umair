@@ -7,6 +7,7 @@ function Home() {
   const [author, setAuthor] = useState("");
   const [isbn, setIsbn] = useState("");
   const [books, setBooks] = useState([]);
+  const [isEdit, setIsEdit] = useState(null);
 
   const titleInputHandler = (event) => {
     event.preventDefault();
@@ -43,13 +44,26 @@ function Home() {
     setIsbn("");
   };
 
-  const deleteButtonHandler = (event, index) => {
+  const handleDeleteBook = (event, index) => {
     event.preventDefault();
+
     if (window.confirm("Are You Sure")) {
-      const tempBooks = [...books];
-      tempBooks.splice(index, 1);
-      setBooks(tempBooks);
+      const tempbooks = [...books];
+      tempbooks.splice(index, 1);
+      setBooks(tempbooks);
     }
+  };
+  const handleEditBook = (event, index) => {
+    event.preventDefault();
+
+    const tempbooks = [...books];
+    const currentBook = tempbooks[index];
+
+    setTitle(currentBook.title);
+    setAuthor(currentBook.author);
+    setIsbn(currentBook.isbn);
+
+    setIsEdit (index);
   };
   return (
     <div className="container">
@@ -86,10 +100,14 @@ function Home() {
           />
         </div>
         <div>
-          <input type="submit" value="Submit" className="u-full-width" />
+          <button type="submit" className="u-full-width">{isEdit === null ? "Submit" : "Update"}</button>
         </div>
       </form>
-      <DisplayBooks books={books} deleteButtonHandler={deleteButtonHandler} />
+      <DisplayBooks
+        books={books}
+        handleDeleteBook={handleDeleteBook}
+        handleEditBook={handleEditBook}
+      />
     </div>
   );
 }

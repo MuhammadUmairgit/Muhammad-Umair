@@ -73,6 +73,7 @@ function Home() {
       tempBooks.splice(index, 1);
       setBooks(tempBooks);
     }
+    console.log(handleDeleteBook, "deleted");
   };
 
   const handleEditBook = (event, index) => {
