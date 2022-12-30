@@ -22,12 +22,10 @@ function DisplayBook(props) {
                 <td>{singleBook.author}</td>
                 <td>{singleBook.isbn}</td>
                 <td>
-                  <button>
-                    Edit
-                  </button>
+                  <button>Edit</button>
                 </td>
-                <td
-                  >
+                <td>
+                  <button>Delete</button>
                 </td>
               </tr>
             );

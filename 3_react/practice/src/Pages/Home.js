@@ -89,7 +89,7 @@ function Home() {
           </button>
         </div>
       </form>
-      <DisplayBook/>
+      <DisplayBook books={books}/>
     </div>
   );
 }
