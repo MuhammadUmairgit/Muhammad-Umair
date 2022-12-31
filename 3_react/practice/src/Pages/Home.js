@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import DisplayBook from "../Components/DisplayBook.js/DisplayBook"
+import DisplayBook from "../Components/DisplayBook.js/DisplayBook";
 import "./Home.js";
 
 function Home() {
@@ -7,6 +7,7 @@ function Home() {
   const [author, setAuthor] = useState("");
   const [isbn, setIsbn] = useState("");
   const [books, setBooks] = useState([]);
+  const [isEdit, setIsEdit] = useState(null);
 
   const titleInputHandler = (event) => {
     event.preventDefault();
@@ -33,8 +34,11 @@ function Home() {
 
     // const bookObject = { title: title, author: author, isbn: isbn };
 
+    if (isEdit === null) {
       createRecord();
-
+    } else {
+      updateRecord();
+    }
   };
 
   const createRecord = () => {
@@ -46,6 +50,43 @@ function Home() {
     setIsbn("");
   };
 
+  const updateRecord = () => {
+    const currentIndex = isEdit;
+    const tempBook = [...books];
+
+    tempBook[currentIndex].title = title;
+    tempBook[currentIndex].author = author;
+    tempBook[currentIndex].isbn = isbn;
+
+    setBooks(tempBook);
+
+    setIsEdit(null);
+
+    setTitle("");
+    setAuthor("");
+    setIsbn("");
+  };
+
+  const deleteButtonHandler = (event, index) => {
+    event.preventDefault();
+
+    if (window.confirm("Are You Sure")) {
+      const tempBooks = [...books];
+      tempBooks.splice(index, 1);
+      setBooks(tempBooks);
+    }
+  };
+
+  const editButtonHandler = (event, index) => {
+    event.preventDefault();
+    const tempBook = [...books];
+    const currentBook = tempBook[index];
+    setTitle(currentBook.title);
+    setAuthor(currentBook.author);
+    setIsbn(currentBook.isbn);
+
+    setIsEdit(index);
+  };
   return (
     <div className="container">
       <h1>Add Book</h1>
@@ -85,11 +126,15 @@ function Home() {
         {/* <div>{isbn}</div> */}
         <div>
           <button type="submit" className="u-full-width">
-            Submit
+            {isEdit === null ? "Submit" : "Update"}
           </button>
         </div>
       </form>
-      <DisplayBook books={books}/>
+      <DisplayBook
+        books={books}
+        deleteButtonHandler={deleteButtonHandler}
+        editButtonHandler={editButtonHandler}
+      />
     </div>
   );
 }

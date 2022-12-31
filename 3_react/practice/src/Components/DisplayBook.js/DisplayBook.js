@@ -1,7 +1,7 @@
 import React from "react";
 
 function DisplayBook(props) {
-  const books = props?.books;
+  const { books, deleteButtonHandler, editButtonHandler } = props;
   return (
     <table className="u-full-width">
       <thead>
@@ -22,10 +22,16 @@ function DisplayBook(props) {
                 <td>{singleBook.author}</td>
                 <td>{singleBook.isbn}</td>
                 <td>
-                  <button>Edit</button>
+                  <button onClick={(event) => editButtonHandler(event, index)}>
+                    Edit
+                  </button>
                 </td>
                 <td>
-                  <button>Delete</button>
+                  <button
+                    onClick={(event) => deleteButtonHandler(event, index)}
+                  >
+                    Delete
+                  </button>
                 </td>
               </tr>
             );
