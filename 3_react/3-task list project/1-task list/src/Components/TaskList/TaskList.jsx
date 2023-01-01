@@ -1,47 +1,34 @@
 import React from "react";
 
 function TaskList(props) {
-  const {
-    tasks,
-    deleteTaskHandler,
-    clearTaskHandler,
-    filterInputHandler,
-    filteredTasks,
-  } = props;
+  const { tasks, clearButtonHandler,clearTaskButtonHandler } = props;
   return (
     <div className="card-action">
       <h5 id="task-title">Tasks</h5>
       <div className="input-field col s12">
-        <input
-          type="text"
-          name="filter"
-          id="filter"
-          onChange={filterInputHandler}
-        />
+        <input type="text" name="filter" id="filter" />
         <label>Filter Task</label>
       </div>
 
       <ul className="collection">
-        {filteredTasks.length > 0 ? (
-          filteredTasks.map((singleTask, index) => {
+        {tasks.length > 0 &&
+          tasks.map((singleTask, index) => {
             return (
               <li className="collection-item" key={index}>
                 {singleTask}
 
                 <a
+                  href
                   className="delete-item secondary-content"
-                  onClick={(event) => deleteTaskHandler(event, index)}
+                  onClick={(event) => clearButtonHandler(event, index)}
                 >
                   <i className="fa fa-remove"></i>
                 </a>
               </li>
             );
-          })
-        ) : (
-          <p className="collection-item">Task is Not Found!</p>
-        )}
+          })}
       </ul>
-      <a className="clear-tasks btn black" onClick={clearTaskHandler}>
+      <a href className="clear-tasks btn black" onClick={clearTaskButtonHandler}>
         Clear Task
       </a>
     </div>

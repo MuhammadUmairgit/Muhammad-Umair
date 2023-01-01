@@ -1,10 +1,8 @@
-import './App.css';
-import Home from './Home/Home';
+import TaskForms from "./Components/TaskForms/TaskForms";
+import "./App.css";
 
 function App() {
-  return (
-   <Home/>
-  );
+  return <TaskForms />;
 }
 
 export default App;
