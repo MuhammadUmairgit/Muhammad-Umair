@@ -62,7 +62,7 @@ function Home() {
 
     setTitle("");
     setAuthor("");
-    setIsbn("");
+    setIsbn("");  
   };
 
   const handleDeleteBook = (event, index) => {

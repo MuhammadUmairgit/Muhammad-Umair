@@ -2,37 +2,37 @@ import React, { useState } from "react";
 import Swal from "sweetalert2";
 import TaskList from "../TaskList/TaskList";
 
-function TaskForms() {
+function TaskForm() {
   const [taskInput, setTaskInput] = useState();
-  const [filterInput, setFilterInput] = useState();
   const [tasks, setTasks] = useState([]);
-  // [
-  //   'first task',
-  //   'second task',
-  //   'third task',
-  // ]
+  const [filterInput, setFilteredInput] = useState();
+  const [isEdit, setIsEdit] = useState();
 
   const taskInputHandler = (event) => {
     event.preventDefault();
     setTaskInput(event.target.value);
   };
 
-  const formSubmitHandler = (event) => {
+  const submitFormHandler = (event) => {
     event.preventDefault();
     if (!taskInput) {
       Swal.fire({
         icon: "error",
-        title: "Please Fill The Task",
+        title: "Please fill the task",
       });
       return;
     }
-    // console.log(task, "task");
     setTasks([...tasks, taskInput]);
 
     setTaskInput("");
+    Swal.fire({
+      icon: "success",
+      title: "Task successfully added",
+    });
+    return;
   };
 
-  const deleteTaskHandler = (event, index) => {
+  const singleTaskDeletingHandler = (event, index) => {
     Swal.fire({
       title: "Are You Sure?",
       showDenyButton: true,
@@ -51,21 +51,29 @@ function TaskForms() {
     });
   };
 
-  const clearTaskHandler = (event) => {
+  const allTasksDeleteButtonHandler = (event) => {
     event.preventDefault();
     setTasks([]);
-    Swal.fire("All tasks are deleted successfully!", "", "success");
+    Swal.fire("All tasks deleted successfully!", " ", "success");
   };
 
-  const filterInputHandler = (event) => {
+  const filteredTaskInputHandler = (event) => {
     event.preventDefault();
-    setFilterInput(event.target.value);
+    setFilteredInput(event.target.value);
   };
 
   const filterInputValue = filterInput ? filterInput.toLowerCase() : "";
   const filteredTasks = tasks.filter((singleTask) =>
     singleTask.toLowerCase().includes(filterInputValue)
   );
+
+  const editButtonHandler = (event, index) => {
+    event.preventDefault();
+    const tempTask = [...tasks];
+    const currentTask = tempTask[index];
+    setTaskInput(currentTask.title);
+    setIsEdit(index);
+  };
 
   return (
     <div className="container">
@@ -75,7 +83,7 @@ function TaskForms() {
             <div className="card-content">
               <span className="card-title">Task List</span>
               <div className="row">
-                <form id="task-form" onSubmit={formSubmitHandler}>
+                <form id="task-form" onSubmit={submitFormHandler}>
                   <div className="input-field col s12">
                     <input
                       type="text"
@@ -95,13 +103,14 @@ function TaskForms() {
                 </form>
               </div>
             </div>
-            {/* TASK LIST */}
+
             <TaskList
               tasks={tasks}
-              deleteTaskHandler={deleteTaskHandler}
-              clearTaskHandler={clearTaskHandler}
-              filterInputHandler={filterInputHandler}
+              singleTaskDeletingHandler={singleTaskDeletingHandler}
+              allTasksDeleteButtonHandler={allTasksDeleteButtonHandler}
+              filteredTaskInputHandler={filteredTaskInputHandler}
               filteredTasks={filteredTasks}
+              editButtonHandler={editButtonHandler}
             />
           </div>
         </div>
@@ -110,4 +119,4 @@ function TaskForms() {
   );
 }
 
-export default TaskForms;
+export default TaskForm;

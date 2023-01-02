@@ -3,10 +3,11 @@ import React from "react";
 function TaskList(props) {
   const {
     tasks,
-    deleteTaskHandler,
-    clearTaskHandler,
-    filterInputHandler,
+    singleTaskDeletingHandler,
+    allTasksDeleteButtonHandler,
+    filteredTaskInputHandler,
     filteredTasks,
+    editButtonHandler,
   } = props;
   return (
     <div className="card-action">
@@ -16,32 +17,35 @@ function TaskList(props) {
           type="text"
           name="filter"
           id="filter"
-          onChange={filterInputHandler}
+          onChange={filteredTaskInputHandler}
         />
         <label>Filter Task</label>
       </div>
-
       <ul className="collection">
-        {filteredTasks.length > 0 ? (
+        {filteredTasks.length > 0 &&
           filteredTasks.map((singleTask, index) => {
             return (
               <li className="collection-item" key={index}>
                 {singleTask}
-
-                <a href
+                <a
+                  href
                   className="delete-item secondary-content"
-                  onClick={(event) => deleteTaskHandler(event, index)}
+                  onClick={(event) => singleTaskDeletingHandler(event, index)}
                 >
                   <i className="fa fa-remove"></i>
                 </a>
+                <button href className="edit-item " onClick={(event) => editButtonHandler (event,index)}>
+                    Edit
+                </button>
               </li>
             );
-          })
-        ) : (
-          <p className="collection-item">Task is Not Found!</p>
-        )}
+          })}
       </ul>
-      <a href className="clear-tasks btn black" onClick={clearTaskHandler}>
+      <a
+        href
+        className="clear-tasks btn black"
+        onClick={allTasksDeleteButtonHandler}
+      >
         Clear Task
       </a>
     </div>
