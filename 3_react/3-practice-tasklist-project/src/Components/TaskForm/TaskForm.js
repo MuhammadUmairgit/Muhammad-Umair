@@ -6,7 +6,6 @@ function TaskForm() {
   const [taskInput, setTaskInput] = useState();
   const [tasks, setTasks] = useState([]);
   const [filterInput, setFilteredInput] = useState();
-  const [isEdit, setIsEdit] = useState();
 
   const taskInputHandler = (event) => {
     event.preventDefault();
@@ -67,14 +66,6 @@ function TaskForm() {
     singleTask.toLowerCase().includes(filterInputValue)
   );
 
-  const editButtonHandler = (event, index) => {
-    event.preventDefault();
-    const tempTask = [...tasks];
-    const currentTask = tempTask[index];
-    setTaskInput(currentTask.title);
-    setIsEdit(index);
-  };
-
   return (
     <div className="container">
       <div className="row">
@@ -110,7 +101,6 @@ function TaskForm() {
               allTasksDeleteButtonHandler={allTasksDeleteButtonHandler}
               filteredTaskInputHandler={filteredTaskInputHandler}
               filteredTasks={filteredTasks}
-              editButtonHandler={editButtonHandler}
             />
           </div>
         </div>
