@@ -1,12 +1,12 @@
-import React from "react";
+import React, { memo } from "react";
 
 function TaskList(props) {
   const {
-    tasks,
     deleteTaskHandler,
     clearTaskHandler,
     filterInputHandler,
     filteredTasks,
+    editTaskHandler,
   } = props;
   return (
     <div className="card-action">
@@ -28,11 +28,20 @@ function TaskList(props) {
               <li className="collection-item" key={index}>
                 {singleTask}
 
-                <a href
+                <a
+                  href="/"
                   className="delete-item secondary-content"
                   onClick={(event) => deleteTaskHandler(event, index)}
                 >
                   <i className="fa fa-remove"></i>
+                </a>
+
+                <a
+                  href="/"
+                  className="delete-item secondary-content"
+                  onClick={(event) => editTaskHandler(event, index)}
+                >
+                  <i className="fa fa-edit"></i>
                 </a>
               </li>
             );
@@ -41,11 +50,11 @@ function TaskList(props) {
           <p className="collection-item">Task is Not Found!</p>
         )}
       </ul>
-      <a href className="clear-tasks btn black" onClick={clearTaskHandler}>
+      <a href="/" className="clear-tasks btn black" onClick={clearTaskHandler}>
         Clear Task
       </a>
     </div>
   );
 }
 
-export default TaskList;
+export default memo(TaskList);
