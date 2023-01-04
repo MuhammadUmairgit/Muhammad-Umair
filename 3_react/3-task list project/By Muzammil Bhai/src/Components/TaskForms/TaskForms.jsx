@@ -6,6 +6,7 @@ function TaskForms() {
   const [taskInput, setTaskInput] = useState();
   const [filterInput, setFilterInput] = useState();
   const [tasks, setTasks] = useState([]);
+  const [isEdit, setIsEdit] = useState(null);
   // [
   //   'first task',
   //   'second task',
@@ -26,20 +27,38 @@ function TaskForms() {
       });
       return;
     }
-    // console.log(task, "task");
-    setTasks([...tasks, taskInput]);
+    if (isEdit === null) {
+      addTask();
+    } else {
+      editTask();
+    }
 
     setTaskInput("");
   };
 
+  const addTask = () => {
+    setTasks([...tasks, taskInput]);
+  };
+
+  const editTask = () => {
+    const currentIndex = isEdit;
+    const tempTasks = [...tasks];
+    tempTasks[currentIndex] = taskInput;
+
+    setTasks(tempTasks);
+
+    setIsEdit(null);
+  };
+
   const deleteTaskHandler = (event, index) => {
+    event.preventDefault();
     Swal.fire({
       title: "Are You Sure?",
       showDenyButton: true,
       confirmButtonText: "Yes",
       denyButtonText: `No`,
     }).then((result) => {
-      if (result.isconfirmed) {
+      if (result.isConfirmed) {
         const tempTask = [...tasks];
         tempTask.splice(index, 1);
         setTasks(tempTask);
@@ -60,6 +79,12 @@ function TaskForms() {
   const filterInputHandler = (event) => {
     event.preventDefault();
     setFilterInput(event.target.value);
+  };
+
+  const editTaskHandler = (event, index) => {
+    event.preventDefault();
+    setIsEdit(index);
+    setTaskInput(tasks[index]);
   };
 
   const filterInputValue = filterInput ? filterInput.toLowerCase() : "";
@@ -90,7 +115,7 @@ function TaskForms() {
                     className="waves-effect waves-light btn"
                     type="submit"
                   >
-                    Add Task
+                    {isEdit === null ? "Add" : "Update"} Task
                   </button>
                 </form>
               </div>
@@ -102,6 +127,7 @@ function TaskForms() {
               clearTaskHandler={clearTaskHandler}
               filterInputHandler={filterInputHandler}
               filteredTasks={filteredTasks}
+              editTaskHandler={editTaskHandler}
             />
           </div>
         </div>

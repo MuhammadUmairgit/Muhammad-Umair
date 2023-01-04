@@ -34,9 +34,13 @@ function TaskList(props) {
                 >
                   <i className="fa fa-remove"></i>
                 </a>
-                <button href className="edit-item " onClick={(event) => editButtonHandler (event,index)}>
-                    Edit
-                </button>
+                <a
+                  href
+                  className="delete-item secondary-content"
+                  onClick={(event) => editButtonHandler (event,index)}
+                >
+                  <i className="fa fa-edit"></i>
+                </a>
               </li>
             );
           })}
