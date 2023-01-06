@@ -2,7 +2,7 @@ import React from "react";
 
 function TaskList(props) {
   const {
-    tasks,
+ 
     singleTaskDeletingHandler,
     allTasksDeleteButtonHandler,
     filteredTaskInputHandler,
