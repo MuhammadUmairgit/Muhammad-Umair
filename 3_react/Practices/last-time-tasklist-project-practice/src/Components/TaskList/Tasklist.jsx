@@ -1,7 +1,12 @@
 import React from "react";
 
 function Tasklist(props) {
-  const { tasks,singleTaskDeleteHandler } = props;
+  const {
+    tasks,
+    singleTaskDeleteHandler,
+    editButtonHandler,
+    allTasksDeleteHandler,
+  } = props;
 
   return (
     <div className="card-action">
@@ -19,14 +24,14 @@ function Tasklist(props) {
                 <a
                   href="/"
                   className="delete-item secondary-content"
-                //   onClick={(event) => editButtonHandler(event, index)}
+                  onClick={(event) => singleTaskDeleteHandler(event, index)}
                 >
                   <i className="fa fa-remove"></i>
                 </a>
                 <a
                   href="/"
                   className="delete-item secondary-content"
-                  onClick={(event) => singleTaskDeleteHandler(event, index)}
+                  onClick={(event) => editButtonHandler(event, index)}
                 >
                   <i className="fa fa-edit"></i>
                 </a>
@@ -34,7 +39,7 @@ function Tasklist(props) {
             );
           })}
       </ul>
-      <a href className="clear-tasks btn black">
+      <a href className="clear-tasks btn black" onClick={allTasksDeleteHandler}>
         Clear Tasks
       </a>
     </div>

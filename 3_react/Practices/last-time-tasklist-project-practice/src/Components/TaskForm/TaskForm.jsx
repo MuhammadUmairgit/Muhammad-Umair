@@ -5,6 +5,7 @@ import Tasklist from "../TaskList/Tasklist";
 function TaskForm() {
   const [taskInput, setTaskInput] = useState("");
   const [tasks, setTasks] = useState([]);
+  const [isEdit, setIsEdit] = useState([]);
 
   const titleInputHandler = (event) => {
     event.preventDefault();
@@ -33,10 +34,49 @@ function TaskForm() {
   };
   const singleTaskDeleteHandler = (event, index) => {
     event.preventDefault();
-    const tempTask = [...tasks];
-    tempTask.splice(index, 1);
-    setTasks(tempTask);
+    Swal.fire({
+      title: "Are you sure?",
+      showDenyButton: "true",
+      confirmationText: "Yes",
+      denyButtonText: "No",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        const tempTask = [...tasks];
+        tempTask.splice(index, 1);
+        setTasks(tempTask);
+        Swal.fire({
+          title: "Task is deleted successfully ",
+          icon: "info",
+          timer: "1200",
+        });
+      } else {
+        Swal.fire({
+          title: "Task is not deleted successfully ",
+          icon: "error",
+          timer: "1000",
+        });
+      }
+    });
   };
+  const allTasksDeleteHandler = (event) => {
+    event.preventDefault();
+    setTasks([]);
+    Swal.fire({
+      title: "All tasks deleted successfully",
+      icon: "success",
+      timer: "1000",
+    });
+  };
+
+  const editButtonHandler = (event) => {
+    event.preventDefault();
+    const currentIndex = isEdit;
+    const tempTask = [...tasks];
+    tempTask[currentIndex] = taskInput;
+    setTasks(tempTask)
+    setIsEdit(null);
+  };
+
   return (
     <div className="container">
       <div className="row">
@@ -54,7 +94,7 @@ function TaskForm() {
                       value={taskInput}
                       onChange={titleInputHandler}
                     />
-                    <label>new task</label>
+                    <label>New task</label>
                   </div>
                   <button
                     className="waves-effect waves-light btn"
@@ -68,8 +108,9 @@ function TaskForm() {
 
             <Tasklist
               tasks={tasks}
-              //   editButtonHandler={editButtonHandler}
+              editButtonHandler={editButtonHandler}
               singleTaskDeleteHandler={singleTaskDeleteHandler}
+              allTasksDeleteHandler={allTasksDeleteHandler}
             />
           </div>
         </div>
