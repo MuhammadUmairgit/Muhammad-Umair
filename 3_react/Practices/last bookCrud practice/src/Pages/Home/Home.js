@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import DisplayBook from "../../Components/DisplayBooks/DisplayBook";
 
 function Home() {
-  const [title, setTitle] = useState;
-  const [author, setAuthor] = useState;
-  const [isbn, setIsbn] = useState;
-  const [books, setBooks] = useState;
+  const [title, setTitle] = useState ("");
+  const [author, setAuthor] = useState ("");
+  const [isbn, setIsbn] = useState ("");
+  const [books, setBooks] = useState ([]);
 
   const titleInputValue = (event) => {
     event.preventDefault();
@@ -22,6 +22,10 @@ function Home() {
 
   const formSubmitHandler = (event) => {
     event.preventDefault();
+    const bookObject = {title, author, isbn};
+    setBooks([...books, bookObject]);
+    setTitle("")
+    setTitle("")
   };
 
   return (

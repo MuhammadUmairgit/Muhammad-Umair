@@ -1,7 +1,7 @@
 import React from "react";
 
 function DisplayBook(props) {
-    const {books} = props;
+  const { books } = props;
   return (
     <table className="u-full-width">
       <thead>
@@ -14,7 +14,28 @@ function DisplayBook(props) {
         </tr>
       </thead>
       <tbody id="book-list">
-        {books.length > 0 books.map}
+        {books.length > 0 &&
+          books.map((singleBook, index) => {
+            return (
+              <tr key={index}>
+                <td>{singleBook.title}</td>
+                <td>{singleBook.author}</td>
+                <td>{singleBook.isbn}</td>
+                <td>
+                  <button>
+                    Edit
+                  </button>
+                </td>
+                <td>
+                  <button
+                    
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            );
+          })}
       </tbody>
     </table>
   );
