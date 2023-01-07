@@ -60,12 +60,11 @@ function TaskForm() {
   };
   const allTasksDeleteHandler = (event) => {
     event.preventDefault();
-    setTasks([]);
     Swal.fire({
       title: "All tasks deleted successfully",
       icon: "success",
-      timer: "1000",
     });
+    setTasks([]);
   };
 
   const editButtonHandler = (event) => {
