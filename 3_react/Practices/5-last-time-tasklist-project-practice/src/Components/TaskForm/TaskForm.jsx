@@ -23,6 +23,15 @@ function TaskForm() {
       });
       return;
     } else {
+      const addTask = () => {
+        setTasks([...tasks, taskInput]);
+  
+        Swal.fire({
+          icon: "success",
+          title: "task sucessfully added",
+          timer: "1200",
+        });
+      };
       if (isEdit === null) {
         addTask();
       } else {
@@ -30,15 +39,6 @@ function TaskForm() {
       }
       setTaskInput("");
     }
-    const addTask = () => {
-      setTasks([...tasks, taskInput]);
-
-      Swal.fire({
-        icon: "success",
-        title: "task sucessfully added",
-        timer: "1200",
-      });
-    };
   };
 
   const editTask = () => {
