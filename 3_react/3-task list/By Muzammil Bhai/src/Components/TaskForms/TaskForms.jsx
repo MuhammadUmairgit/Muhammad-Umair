@@ -26,7 +26,7 @@ function TaskForms() {
         title: "Please Fill The Task",
       });
       return;
-    }
+    }else{
     if (isEdit === null) {
       addTask();
     } else {
