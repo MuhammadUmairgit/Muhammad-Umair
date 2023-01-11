@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from "react";
+import Swal from "sweetalert2";
+import Posts from "../../Components/Posts/Posts";
+import Spinner from "../../Components/Spinner/Spinner";
+import { baseUrl } from "../../Constant/UrlConstant";
 import "./MainApp.css";
 
 function MainApp() {
-  const [loader, setLoader] = useState(false);
   const [posts, setPosts] = useState([]);
+  const [loader, setLoader] = useState(false);
   const [isEdit, setIsEdit] = useState(null);
 
   useEffect(() => {
@@ -13,7 +17,7 @@ function MainApp() {
   const getPost = async () => {
     setLoader(true);
 
-    await fetch(`https://jsonplaceholder.typicode.com/posts`)
+    await fetch(`${baseUrl}/posts`)
       .then((response) => response.json())
       .then((data) => setPosts(data))
       .catch((error) => console.error(error));
@@ -21,29 +25,49 @@ function MainApp() {
     setLoader(false);
   };
 
-  const singleDeleteButtonHandler = (event, index) => {
+  const deleteButtonHandler = async (event, index) => {
     event.preventDefault();
-    const tempPost = [...posts];
-    tempPost.splice(index, 1);
-    setPosts(tempPost);
+
+    const confirmBtnResponse = await confirmationModal();
+
+    if (confirmBtnResponse) {
+      setLoader(true);
+      await fetch(`${baseUrl}/posts/${index}`, {
+        method: "DELETE",
+      })
+        .then(async () => {
+          await getPost();
+        })
+        .catch((error) => console.log(error));
+      setLoader(false);
+      Swal.fire("Deleted Successfully", "", "success");
+    } else {
+      Swal.fire("Not Deleted Successfully", "", "error");
+    }
   };
 
-  const editButtonHandler = (event, index) => {
-    event.preventDefault();
-    setIsEdit(index);
-    const currentIndex = isEdit;
-    const tempPost = [...posts];
-    tempPost[currentIndex] = postInput;
+  const confirmationModal = async () => {
+    const response = await Swal.fire({
+      title: "Do you want to delete it?",
+      showDenyButton: true,
+      confirmButtonText: "Yes",
+      denyButtonText: "No",
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        return true;
+      } else if (result.isDenied) {
+        return false;
+      }
+    });
+
+    return response;
   };
 
   return (
     <div className="container main-app">
       <button className="btn btn-primary create-post">Create Post</button>
-      {loader && (
-        <div className="loader-container">
-          <div className="spinner"></div>
-        </div>
-      )}
+      {loader && <Spinner />}
       <div class="modal fade" id="edit-post">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -91,45 +115,7 @@ function MainApp() {
           </div>
         </div>
       </div>
-      <table className="table table-hover">
-        <thead>
-          <tr>
-            <th>Post Id</th>
-            <th>Title</th>
-            <th>Edit</th>
-            <th>Delete</th>
-          </tr>
-        </thead>
-        <tbody>
-          {posts.length > 0 &&
-            posts.map((singlePost, index) => {
-              return (
-                <tr key={index}>
-                  <td>{singlePost.id}</td>
-                  <td>{singlePost.title}</td>
-                  <td>
-                    <button
-                      className="btn btn-primary"
-                      onClick={(event) => editButtonHandler(event, index)}
-                    >
-                      Edit
-                    </button>
-                  </td>
-                  <td>
-                    <button
-                      className="btn btn-danger"
-                      onClick={(event) =>
-                        singleDeleteButtonHandler(event, index)
-                      }
-                    >
-                      Delete
-                    </button>
-                  </td>
-                </tr>
-              );
-            })}
-        </tbody>
-      </table>
+      <Posts posts={posts} deleteButtonHandler={deleteButtonHandler} />
     </div>
   );
 }
